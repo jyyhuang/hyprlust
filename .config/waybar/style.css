@@ -1,0 +1,65 @@
+@import "/home/joyjosr/.config/waybar/colors.css";
+
+* {
+  transition: none;
+  box-shadow: none;
+  font-family: Hack Nerd Font;
+  font-size: 18px;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#waybar {
+  margin-top: 14px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 12px;
+  border: 2px solid @color11;
+}
+
+#workspaces {
+  color: transparent;
+}
+
+#workspaces button {
+  padding: 1px 4px;
+  color: @color14;
+  background: transparent;
+}
+
+#workspaces button.visible {
+  background: @color1;
+}
+
+#bluetooth, #mode, #battery, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpris, #clock, #custom-icon, #workspaces, #window, #custom-power {
+  color: @color14;
+  margin: 4px 2px;
+  padding: 0 6px;
+  border-radius: 20px;
+  min-width: 10px;
+  background-color: transparent;
+}
+
+#clock {
+  margin: 4px 2px;
+}
+
+#custom-power{
+  margin: 5px 10px 5px 0;
+  padding: 0 10px 0 7px;
+}
+
+#custom-icon{
+  margin: 4px 1px 4px 5px;
+  border-radius: 10px;
+  min-width: 15px;
+}
+
+#window {
+    background-color: @color1;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+

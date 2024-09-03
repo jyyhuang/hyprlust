@@ -1,0 +1,40 @@
+#userimage {
+    border-color: #F2789D;
+}
+
+#prompt{
+      text-color: #F05E8D;
+}
+
+#message {
+    background-color:           transparent;
+    text-color: #F05E8D;
+}
+
+#window {
+   background-color: #00000099;
+}
+
+#textbox{
+    placeholder-color:           #F05E8D;
+}
+
+#listview{
+    background-color:            transparent;
+    text-color:                  #BA9097;
+}
+
+#element {
+    background-color:            transparent;
+    text-color:                  #F8C1CA;
+}
+
+#element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+#element.selected.normal {
+    background-color:            #BA9097;
+    text-color:                  #010206;
+}

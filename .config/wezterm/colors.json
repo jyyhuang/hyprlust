@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/joyjosr/wallpapers/sukuna.png",
+    "alpha": "100",
+
+    "special": {
+        "background": "#010206",
+        "foreground": "#FCE9EC",
+        "cursor": "#FCE9EC"
+    },
+    "colors": {
+        "color0": "#010206",
+        "color1": "#426A7F",
+        "color2": "#B44669",
+        "color3": "#B55A75",
+        "color4": "#757D8D",
+        "color5": "#B46A7C",
+        "color6": "#BA9097",
+        "color7": "#F3D7DC",
+        "color8": "#AA969A",
+        "color9": "#588EAA",
+        "color10": "#F05E8D",
+        "color11": "#F2789D",
+        "color12": "#9DA7BC",
+        "color13": "#F08EA6",
+        "color14": "#F8C1CA",
+        "color15": "#F3D7DC"
+    }
+}

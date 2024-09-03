@@ -1,0 +1,91 @@
+configuration {
+    matching: "normal";
+    modi:                        "run,drun";
+    show-icons:                  true;
+  	drun-display-format:         "{name}";
+    hover-select:                true;
+    font:                        "Hack Nerd Font Bold 14";
+}
+
+@import "./colors-rofi.rasi"
+
+window {
+    width:                       100%;
+    height:                      100%;
+    fullscreen: true; 
+    margin:                      0px;
+    padding:                     0px;
+}
+
+mainbox {
+    children:                    ["inputbar","listview" ];
+    spacing:                     24px;
+    margin:                      0px;
+    padding:                     64px;
+}
+
+listview {
+    columns:                     4;
+    lines:                       3;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+
+}
+
+element {
+    cursor:                      pointer;
+    children: [ element-icon, element-text ];
+    border-radius:               36px;
+    orientation:                 vertical;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+element-icon {
+    expand:                      false;
+    size:                        24%;
+    cursor:                      inherit;
+}
+
+element-text{
+  horizontal-align: 0.5;
+  margin: 10px;
+}
+
+inputbar {
+   spacing: 0px;
+   children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+prompt {
+   padding:0px 10px;
+   border-radius: 20px;
+}
+
+entry {
+   placeholder: "Search...";
+   padding:0px 6px;
+   cursor-width: 11px;
+}
+
+case-indicator {
+   padding:6px 10px;
+   border-radius: 20px;
+}
+
+textbox-prompt-colon {
+	padding:0px 0px;
+  expand:     false;
+  str:        "";
+  margin:     0px 0.3em 0em 0em ;
+  border-radius: 20px;
+}

@@ -1,0 +1,153 @@
+* {
+    active-background: {{color2}};
+    active-foreground: @foreground;
+    normal-background: @background;
+    normal-foreground: @foreground;
+    urgent-background: {{color1}};
+    urgent-foreground: @foreground;
+
+    alternate-active-background: @background;
+    alternate-active-foreground: @foreground;
+    alternate-normal-background: @background;
+    alternate-normal-foreground: @foreground;
+    alternate-urgent-background: @background;
+    alternate-urgent-foreground: @foreground;
+
+    selected-active-background: {{color1}};
+    selected-active-foreground: @foreground;
+    selected-normal-background: {{color2}};
+    selected-normal-foreground: @foreground;
+    selected-urgent-background: {{color3}};
+    selected-urgent-foreground: @foreground;
+
+    background-color: @background;
+    background: {{color0}};
+    foreground: {{color11}};
+    border-color: @foreground;
+}
+
+#window {
+   background-color: #00000099;
+}
+
+#mainbox{
+   background-color: transparent;
+}
+
+#message {
+   background-color: transparent;
+}
+
+#textbox {
+   text-color: @background;
+   background-color: transparent;
+}
+
+#listview {
+   background-color: transparent;
+}
+
+#element {
+  background-color: transparent;
+}
+
+#element-icon {
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+#element-text {
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+#element-text.selected.normal{
+  text-color: @background;
+}
+
+#element.normal.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+#element.normal.urgent {
+    background-color: transparent;
+    text-color: @urgent-foreground;
+}
+
+#element.normal.active {
+    background-color: transparent;
+    text-color: @active-foreground;
+}
+
+#element.selected.normal {
+    background-color: @foreground;
+}
+
+#element.selected.urgent {
+    background-color: transparent;
+    text-color: transparent;
+}
+
+#element.selected.active {
+    background-color: transparent;
+    text-color: @selected-active-foreground;
+}
+
+#element.alternate.normal {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+#element.alternate.urgent {
+    background-color: transparent;
+    text-color: @alternate-urgent-foreground;
+}
+
+#element.alternate.active {
+    background-color: transparent;
+    text-color:       transparent;
+}
+
+#scrollbar {
+   background-color: transparent;
+   handle-color: transparent;
+}
+
+#mode-switcher {
+   background-color: transparent;
+}
+
+#button {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+#button.selected {
+    text-color: transparent;
+}
+
+#inputbar {
+    background-color: transparent;
+}
+
+#case-indicator {
+   text-color: transparent;
+   background-color: transparent;
+}
+
+#entry {
+    background-color: transparent;
+    text-color: @foreground;
+    placeholder-color: {{color10}};
+}
+
+#prompt {
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+#textbox-prompt-colon{
+    text-color: @foreground;
+    background-color: transparent;
+}

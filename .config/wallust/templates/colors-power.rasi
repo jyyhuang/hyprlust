@@ -1,0 +1,40 @@
+#userimage {
+    border-color: {{color11}};
+}
+
+#prompt{
+      text-color: {{color10}};
+}
+
+#message {
+    background-color:           transparent;
+    text-color: {{color10}};
+}
+
+#window {
+   background-color: #00000099;
+}
+
+#textbox{
+    placeholder-color:           {{color10}};
+}
+
+#listview{
+    background-color:            transparent;
+    text-color:                  {{color6}};
+}
+
+#element {
+    background-color:            transparent;
+    text-color:                  {{color14}};
+}
+
+#element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+#element.selected.normal {
+    background-color:            {{color6}};
+    text-color:                  {{color0}};
+}

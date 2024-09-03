@@ -1,0 +1,14 @@
+configuration {
+  matching: "normal";
+  display-drun: " Apps ";
+  display-run: "  Run ";
+  display-Network: " 󰀂 Network";
+  terminal : "wezterm";
+  display-window: "Windows:";
+  drun-display-format: "{name}";
+  font: "Hack Nerd Font Bold 14";
+  modi: "run,drun";
+  show-icons: true;
+}
+
+@theme  "./themes/rofi-default.rasi"

@@ -1,0 +1,127 @@
+{
+  "layer": "bottom",
+  "position": "top",
+  "height": 30,
+  "margin": "3, 0, 0, 0",
+  "modules-left": ["custom/icon", "hyprland/workspaces", "mpris"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "idle_inhibitor",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "battery",
+    "clock",
+  ],
+  "reload_style_on_change": true,
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces":{
+      "*": 5
+    }
+  },
+
+  "custom/icon": {
+    "format": ""
+  },
+
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": " {:%I:%M %p}",
+    "format-alt": " {:%a, %b %d}"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "format-alt": "{time}"
+  },
+
+  "network": {
+    "format": "{icon}",
+    "format-alt-click": "click-right",
+    "format-wifi": "{icon} {essid}",
+    "format-disconnected": "{icon} Disconnected",
+    "format-icons": {
+      "wifi": ["󰖩"],
+      "disconnected": ["󰖪"]
+    },
+    "on-click": "wezterm start nmtui",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": " {format_source}",
+    "format-muted": "  {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": [" ", " ", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": " ",
+      "deactivated": " "
+    }
+  },
+
+  "mpris": {
+  	"format": "    {player_icon} {dynamic}",
+  	"format-paused": "    {status_icon} <i>{dynamic}</i>",
+  	"player-icons": {
+  		"default": "▶",
+  	},
+  	"status-icons": {
+  		"paused": "⏸"
+  	},
+    "max-length": 45
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "exec ~/.config/rofi/themes/powermenu/powermenu.sh",
+    "tooltip": false
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true,
+    "max-length": 45
+  },
+
+  "bluetooth": {
+      "format": " {status}",
+      "format-disabled": "",
+      "format-connected": "{num_connections} connected",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "format-alt-click": "click-right",
+      "on-click": "blueman-manager",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  }
+}

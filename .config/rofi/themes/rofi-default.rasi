@@ -1,0 +1,129 @@
+@import "./colors-rofi.rasi"
+
+window {
+   width: 40%;
+   padding: 10px;
+   fullscreen: false;
+   border:  4px;
+   border-radius: 7px;
+}
+
+mainbox {
+   spacing:5px;
+   border-radius: 20px;
+}
+
+message {
+   padding: 10px 10px;
+   border-radius: 20px;
+}
+
+textbox {
+   border-radius: 20px;
+}
+
+listview {
+   fixed-height: true;
+   dynamic: false;
+   scrollbar: false;
+   spacing: 0px;
+   padding: 5px 0px 0px 0px;
+   margin: 1px 1px 1px 1px;
+   border-radius: 20px;
+}
+
+element {
+  spacing: 5px;
+  children: [ element-icon, element-text ];
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+element-icon {
+  size: 22px;
+}
+
+element-text {
+  vertical-align: 0.5;
+}
+
+element normal.normal {
+   padding: 0px 15px;
+   border-radius: 20px;
+}
+
+element normal.active {
+   border-radius: 20px;
+}
+
+element selected.normal {
+    border-radius: 20px;
+}
+
+element selected.urgent {
+    border-radius: 20px;
+}
+
+element selected.active {
+    border-radius: 20px;
+}
+
+element alternate.normal {
+    border-radius: 20px;
+}
+
+element alternate.urgent {
+    border-radius: 20px;
+}
+
+element alternate.active {
+    border-radius: 20px;
+}
+
+scrollbar {
+   handle-width: 0px;
+   border-radius: 20px;
+}
+
+mode-switcher {
+   border-radius: 20px;
+}
+
+button {
+   border-radius: 20px;
+}
+
+button selected {
+    text-color:       transparent;
+    border-radius: 20px;
+}
+
+inputbar {
+   spacing: 0px;
+   children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+   border-radius: 20px;
+}
+
+prompt {
+   padding:0px 10px;
+   border-radius: 20px;
+}
+
+entry {
+   placeholder: "Search...";
+   padding:0px 6px;
+   cursor-width: 11px;
+}
+
+case-indicator {
+   padding:6px 10px;
+   border-radius: 20px;
+}
+
+textbox-prompt-colon {
+	padding:0px 0px;
+  expand:     false;
+  str:        "";
+  margin:     0px 0.3em 0em 0em ;
+  border-radius: 20px;
+}

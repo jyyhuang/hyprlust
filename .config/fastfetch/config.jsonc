@@ -1,0 +1,71 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty-direct",
+    "source": "/home/joyjosr/.config/fastfetch/images/Nyarch.png",
+    "padding": {
+      "top": 1,
+      "left": 2
+    },
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "        {6}",
+    },
+    {
+      "type": "break"
+    },
+    {
+      "key": "OS",
+      "type": "os",
+    },
+    {
+      "key": "Kernel",
+      "type": "kernel",
+      "format": "{1}",
+    },
+    {
+      "key": "Shell",
+      "type": "shell",
+    },
+    {
+      "key": "WM",
+      "type": "wm",
+    },
+    {
+      "key": "Packages",
+      "type": "packages",
+    },
+    {
+      "key": "Terminal",
+      "type": "terminal",
+      "format": "{5}",
+    },
+    {
+      "key": "Terminal Font",
+      "type": "terminalfont",
+    },
+    {
+      "key": "Media Player",
+      "type": "player",
+    },
+    {
+      "key": "Media",
+      "type": "media",
+    },
+    {
+      "key": "Memory",
+      "type": "memory",
+      "format": "{1} / {2}",
+    },
+    {
+      "type": "break"
+    },
+    {
+      "type": "colors",
+    },
+    "break",
+    "break"
+  ],
+}
