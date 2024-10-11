@@ -100,7 +100,7 @@
   	"status-icons": {
   		"paused": "⏸"
   	},
-    "max-length": 45
+    "max-length": 40
   },
 
   "custom/power": {
@@ -111,7 +111,7 @@
   "hyprland/window": {
     "format": "{}",
     "separate-outputs": true,
-    "max-length": 45
+    "max-length": 40
   },
 
   "bluetooth": {

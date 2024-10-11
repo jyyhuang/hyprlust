@@ -1,12 +1,12 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "kitty-direct",
-    "source": "/home/joyjosr/.config/fastfetch/images/Nyarch.png",
+    "type": "small",
     "padding": {
-      "top": 1,
-      "left": 2
+      "top": 3,
+      "left": 2,
     },
+    "preserveAspectRatio": true,
   },
   "modules": [
     {
@@ -14,7 +14,7 @@
       "format": "        {6}",
     },
     {
-      "type": "break"
+      "type": "break",
     },
     {
       "key": "OS",
@@ -60,12 +60,12 @@
       "format": "{1} / {2}",
     },
     {
-      "type": "break"
+      "type": "break",
     },
     {
       "type": "colors",
     },
     "break",
-    "break"
+    "break",
   ],
 }

@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/joyjosr/wallpapers/sukuna.png",
+    "wallpaper": "/home/joyjosr/wallpapers/pink_cat.png",
     "alpha": "100",
 
     "special": {
-        "background": "#010206",
-        "foreground": "#FCE9EC",
-        "cursor": "#FCE9EC"
+        "background": "#000000",
+        "foreground": "#F8F4F7",
+        "cursor": "#F8F4F7"
     },
     "colors": {
-        "color0": "#010206",
-        "color1": "#426A7F",
-        "color2": "#B44669",
-        "color3": "#B55A75",
-        "color4": "#757D8D",
-        "color5": "#B46A7C",
-        "color6": "#BA9097",
-        "color7": "#F3D7DC",
-        "color8": "#AA969A",
-        "color9": "#588EAA",
-        "color10": "#F05E8D",
-        "color11": "#F2789D",
-        "color12": "#9DA7BC",
-        "color13": "#F08EA6",
-        "color14": "#F8C1CA",
-        "color15": "#F3D7DC"
+        "color0": "#000000",
+        "color1": "#B55C95",
+        "color2": "#7E7C7E",
+        "color3": "#AB7E99",
+        "color4": "#9A9096",
+        "color5": "#B498A8",
+        "color6": "#B1A8AE",
+        "color7": "#EDE7EB",
+        "color8": "#A5A1A4",
+        "color9": "#F27BC7",
+        "color10": "#A8A6A8",
+        "color11": "#E4A9CD",
+        "color12": "#CEC1C9",
+        "color13": "#F1CBE0",
+        "color14": "#EDE0E9",
+        "color15": "#EDE7EB"
     }
 }

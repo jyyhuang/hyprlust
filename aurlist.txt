@@ -1,0 +1,12 @@
+hyprpicker-git
+otf-monocraft
+paru
+python-pywalfox
+timeshift-systemd-timer
+turbo-base64
+ueberzugpp
+vesktop
+wallust
+wezterm-git
+where-is-my-sddm-theme-git
+zsh-theme-powerlevel10k-git
