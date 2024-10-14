@@ -6,7 +6,7 @@ timeshift-systemd-timer
 turbo-base64
 ueberzugpp
 vesktop
-wallust
+wallust-git
 wezterm-git
 where-is-my-sddm-theme-git
 zsh-theme-powerlevel10k-git

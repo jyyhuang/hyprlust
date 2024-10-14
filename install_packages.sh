@@ -1,13 +1,16 @@
 #!/bin/bash
 
+# Exit on errors
+set -e
+
 # Check if package lists exist
 if [ ! -f pkglist.txt ]; then
-  echo "Package list (pkglist.txt) not found!"
+  echo "Package list (pkglist.txt) not found"
   exit 1
 fi
 
 if [ ! -f aurlist.txt ]; then
-  echo "AUR package list (aurlist.txt) not found!"
+  echo "AUR package list (aurlist.txt) not found"
   exit 1
 fi
 
@@ -22,11 +25,18 @@ fi
 if ! command -v paru &> /dev/null; then
   echo "paru not found. Installing paru..."
   sudo pacman -S --needed base-devel git
-  if [ ! -d paru ]; then
-    git clone https://aur.archlinux.org/paru.git || { echo "Failed to clone paru."; exit 1; }
+if [ -d paru ]; then
+    echo "Removing existing paru directory."
+    rm -rf paru
   fi
+  git clone https://aur.archlinux.org/paru.git || { echo "Failed to clone paru."; exit 1; }
   cd paru || { echo "Failed to enter paru directory."; exit 1; }
-  makepkg -si || { echo "Failed to build and install paru."; exit 1; }
+  if ! makepkg -si; then
+    echo "Failed to build and install paru."
+    cd ..
+    rm -rf paru
+    exit 1
+  fi
   cd .. && rm -rf paru
 fi
 
@@ -34,6 +44,7 @@ fi
 echo "Installing AUR packages..."
 if ! paru -S --needed - < aurlist.txt; then
   echo "Error installing AUR packages."
+  exit 1
 fi
 
 echo "All packages installed successfully."

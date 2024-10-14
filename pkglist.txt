@@ -22,6 +22,7 @@ gst-plugin-pipewire
 hypridle
 hyprland
 hyprlock
+imagemagick
 intel-media-driver
 iwd
 jq
@@ -102,4 +103,5 @@ zoxide
 zram-generator
 zsh
 zsh-autosuggestions
+zsh-completions
 zsh-syntax-highlighting
