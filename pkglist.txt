@@ -13,7 +13,6 @@ efibootmgr
 fastfetch
 fd
 ffmpegthumbnailer
-filelight
 firefox
 fzf
 git
@@ -58,6 +57,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 polkit-kde-agent
+poppler
 qt5-svg
 qt5-wayland
 qt6-wayland
@@ -72,6 +72,7 @@ smartmontools
 sof-firmware
 swaync
 swww
+thunar
 trash-cli
 ttf-hack-nerd
 ttf-nerd-fonts-symbols-mono

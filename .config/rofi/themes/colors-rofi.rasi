@@ -1,9 +1,9 @@
 * {
-    active-background: #7E7C7E;
+    active-background: #6A6274;
     active-foreground: @foreground;
     normal-background: @background;
     normal-foreground: @foreground;
-    urgent-background: #B55C95;
+    urgent-background: #4B6877;
     urgent-foreground: @foreground;
 
     alternate-active-background: @background;
@@ -13,16 +13,16 @@
     alternate-urgent-background: @background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: #B55C95;
+    selected-active-background: #4B6877;
     selected-active-foreground: @foreground;
-    selected-normal-background: #7E7C7E;
+    selected-normal-background: #6A6274;
     selected-normal-foreground: @foreground;
-    selected-urgent-background: #AB7E99;
+    selected-urgent-background: #5E7589;
     selected-urgent-foreground: @foreground;
 
     background-color: @background;
-    background: #000000;
-    foreground: #E4A9CD;
+    background: #000108;
+    foreground: #5A7C9A;
     border-color: @foreground;
 }
 
@@ -139,7 +139,7 @@
 #entry {
     background-color: transparent;
     text-color: @foreground;
-    placeholder-color: #A8A6A8;
+    placeholder-color: #7B7087;
 }
 
 #prompt {

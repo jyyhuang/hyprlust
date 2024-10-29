@@ -36,5 +36,5 @@
 
 #element.selected.normal {
     background-color:            {{color6}};
-    text-color:                  {{color0}};
+    text-color:                  {{background}};
 }

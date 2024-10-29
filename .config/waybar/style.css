@@ -3,7 +3,7 @@
 * {
   transition: none;
   box-shadow: none;
-  font-family: Hack Nerd Font;
+  font-family: Monocraft Nerd Font;
   font-size: 18px;
 }
 
@@ -13,7 +13,6 @@ window#waybar.empty #window {
 
 #waybar {
   margin-top: 14px;
-  background: rgba(0,0,0,0.3);
   border-radius: 12px;
   border: 2px solid @color11;
 }
@@ -32,7 +31,7 @@ window#waybar.empty #window {
   background: @color1;
 }
 
-#bluetooth, #mode, #battery, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpris, #clock, #custom-icon, #workspaces, #window, #custom-power {
+#bluetooth, #mode, #battery, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpris, #clock, #custom-icon, #workspaces, #window, #custom-power, #memory {
   color: @color14;
   margin: 4px 2px;
   padding: 0 6px;

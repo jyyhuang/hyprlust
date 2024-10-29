@@ -95,3 +95,8 @@ end, { desc = "Open parent directory" })
 -- highlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove highlight" })
 
+-- Resize windows
+vim.keymap.set("n", "<C-Up>", "<cmd>resize +5<cr>", { desc = "Increase Window Height" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize -5<cr>", { desc = "Decrease Window Height" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize -5<cr>", { desc = "Increase Window Width" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize +5<cr>", { desc = "Decrease Window Width" })

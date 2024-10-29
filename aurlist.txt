@@ -1,5 +1,5 @@
 hyprpicker-git
-otf-monocraft
+hyprshot
 paru
 python-pywalfox
 timeshift-systemd-timer

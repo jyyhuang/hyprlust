@@ -57,10 +57,11 @@ vim.opt.cursorline = true
 vim.opt.virtualedit = "block"
 
 vim.opt.title = true
-vim.opt.titlelen = 0
 vim.opt.titlestring = 'nvim: %{expand("%:t")}'
 vim.opt.titleold = "zsh"
 
-vim.opt.guicursor =
-	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+-- views can only be fully collapsed with the global statusline-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
 
+vim.opt.guicursor =
+"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
