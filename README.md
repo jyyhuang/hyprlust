@@ -12,5 +12,10 @@
 - **SDDM Theme**: [where is my sddm theme?](https://github.com/stepanzubkov/where-is-my-sddm-theme)
 - **Browser**: Firefox
 
+> [!Note]
+> 
+
+
+
 
 
