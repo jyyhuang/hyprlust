@@ -19,5 +19,5 @@
 
 
 #waybar{
-  background: rgba({{background | rgb}},0.85);
+  background: rgba({{background | rgb}},0.80);
 }

@@ -35,7 +35,7 @@ function module.apply_to_config(config)
   config.scrollback_lines = 3000
   config.front_end = "OpenGL"
 
-  config.window_background_opacity = 0.85
+  config.window_background_opacity = 0.80
   config.font = wezterm.font_with_fallback({
     {
       family = "Monocraft Nerd Font",
@@ -60,7 +60,7 @@ function module.apply_to_config(config)
   config.colors = {
     split = wallust_colors.colors.color1,
     tab_bar = {
-      background = hex2rgba(wallust_colors.special.background, 0.85),
+      background = hex2rgba(wallust_colors.special.background, 0.80),
       active_tab = {
         bg_color = wallust_colors.colors.color14,
         fg_color = wallust_colors.special.background,

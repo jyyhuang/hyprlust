@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/joyjosr/wallpapers/miku.jpg",
+    "wallpaper": "/home/joyjosr/wallpapers/pink_blade.png",
     "alpha": "100",
 
     "special": {
-        "background": "#000108",
-        "foreground": "#D0F0F3",
-        "cursor": "#D0F0F3"
+        "background": "#1F1D1F",
+        "foreground": "#F7DDE7",
+        "cursor": "#F7DDE7"
     },
     "colors": {
-        "color0": "#00070F",
-        "color1": "#4B6877",
-        "color2": "#6A6274",
-        "color3": "#5E7589",
-        "color4": "#90728F",
-        "color5": "#998D9C",
-        "color6": "#5AA0A6",
-        "color7": "#B3E2E6",
-        "color8": "#7D9EA1",
-        "color9": "#50778C",
-        "color10": "#7B7087",
-        "color11": "#5A7C9A",
-        "color12": "#9E6D9C",
-        "color13": "#CCBCD0",
-        "color14": "#78D5DE",
-        "color15": "#B3E2E6"
+        "color0": "#4A484A",
+        "color1": "#794D59",
+        "color2": "#745D67",
+        "color3": "#986072",
+        "color4": "#A07789",
+        "color5": "#BA758F",
+        "color6": "#AF768C",
+        "color7": "#ECC6D5",
+        "color8": "#A58A95",
+        "color9": "#8E5363",
+        "color10": "#876877",
+        "color11": "#B76C85",
+        "color12": "#B5718E",
+        "color13": "#DD6693",
+        "color14": "#E99DBB",
+        "color15": "#ECC6D5"
     }
 }

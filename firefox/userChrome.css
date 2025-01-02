@@ -100,6 +100,7 @@ panelmultiview {
 /********************* END PYWALFOX CUSTOM CSS *********************/
 
 * {
+  font-family: "Hack Nerd Font";
   font-size: 17px !important;
 }
 

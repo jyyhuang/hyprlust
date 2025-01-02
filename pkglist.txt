@@ -31,7 +31,6 @@ ldns
 libnotify
 libpulse
 libva-intel-driver
-libva-mesa-driver
 linux
 linux-firmware
 man-db
@@ -48,7 +47,6 @@ noto-fonts-emoji
 npm
 ntp
 nwg-look
-obsidian
 pacman-contrib
 papirus-icon-theme
 pavucontrol
@@ -76,9 +74,11 @@ thunar
 trash-cli
 ttf-hack-nerd
 ttf-nerd-fonts-symbols-mono
+ueberzugpp
 ufw
 unarchiver
 unzip
+v4l-utils
 vala
 vim
 vulkan-intel

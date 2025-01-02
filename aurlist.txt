@@ -4,7 +4,6 @@ paru
 python-pywalfox
 timeshift-systemd-timer
 turbo-base64
-ueberzugpp
 vesktop
 wallust-git
 wezterm-git

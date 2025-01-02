@@ -58,9 +58,9 @@
   },
 
   "network": {
-    "format": "{icon}",
+    "format": "{icon} ",
     "format-alt-click": "click-right",
-    "format-wifi": "{icon} {essid}",
+    "format-wifi": "{icon} ",
     "format-disconnected": "{icon} Disconnected",
     "format-icons": {
       "wifi": ["󰖩"],

@@ -11,7 +11,7 @@ function module.apply_to_config(config)
 	config.keys = {
 		{ key = "|", mods = "LEADER|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 		{ key = "-", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-		{ key = "w", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) },
+		{ key = "w", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 
 		{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
 		{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
