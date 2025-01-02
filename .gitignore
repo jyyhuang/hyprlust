@@ -2,3 +2,6 @@ Electron/
 vesktop/
 user-dirs.dirs
 user-dirs.locale
+simple-update-notifier/
+electron-builder.json
+systemd/
