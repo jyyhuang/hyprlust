@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/joyjosr/wallpapers/maid_city.jpeg",
+    "wallpaper": "/home/joyjosr/wallpapers/snow.jpeg",
     "alpha": "100",
 
     "special": {
         "background": "#000003",
-        "foreground": "#D9DAE1",
-        "cursor": "#D9DAE1"
+        "foreground": "#ECE5E6",
+        "cursor": "#ECE5E6"
     },
     "colors": {
         "color0": "#000004",
-        "color1": "#696C75",
-        "color2": "#757B8B",
-        "color3": "#9F6E6F",
-        "color4": "#83727C",
-        "color5": "#986B64",
-        "color6": "#757686",
-        "color7": "#C0C1CC",
-        "color8": "#86878F",
-        "color9": "#727583",
-        "color10": "#727C96",
-        "color11": "#B76668",
-        "color12": "#937989",
-        "color13": "#C4847B",
-        "color14": "#9294AA",
-        "color15": "#C0C1CC"
+        "color1": "#565B61",
+        "color2": "#675A5B",
+        "color3": "#887779",
+        "color4": "#537A98",
+        "color5": "#808990",
+        "color6": "#978989",
+        "color7": "#DCD2D3",
+        "color8": "#9A9393",
+        "color9": "#5F666E",
+        "color10": "#766467",
+        "color11": "#927578",
+        "color12": "#6FA3CA",
+        "color13": "#ABB7C0",
+        "color14": "#C9B6B7",
+        "color15": "#DCD2D3"
     }
 }
