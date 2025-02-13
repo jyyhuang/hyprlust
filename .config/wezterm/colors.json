@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/joyjosr/wallpapers/pink_blade.png",
+    "wallpaper": "/home/joyjosr/wallpapers/maid_city.jpeg",
     "alpha": "100",
 
     "special": {
-        "background": "#1F1D1F",
-        "foreground": "#F7DDE7",
-        "cursor": "#F7DDE7"
+        "background": "#000003",
+        "foreground": "#D9DAE1",
+        "cursor": "#D9DAE1"
     },
     "colors": {
-        "color0": "#4A484A",
-        "color1": "#794D59",
-        "color2": "#745D67",
-        "color3": "#986072",
-        "color4": "#A07789",
-        "color5": "#BA758F",
-        "color6": "#AF768C",
-        "color7": "#ECC6D5",
-        "color8": "#A58A95",
-        "color9": "#8E5363",
-        "color10": "#876877",
-        "color11": "#B76C85",
-        "color12": "#B5718E",
-        "color13": "#DD6693",
-        "color14": "#E99DBB",
-        "color15": "#ECC6D5"
+        "color0": "#000004",
+        "color1": "#696C75",
+        "color2": "#757B8B",
+        "color3": "#9F6E6F",
+        "color4": "#83727C",
+        "color5": "#986B64",
+        "color6": "#757686",
+        "color7": "#C0C1CC",
+        "color8": "#86878F",
+        "color9": "#727583",
+        "color10": "#727C96",
+        "color11": "#B76668",
+        "color12": "#937989",
+        "color13": "#C4847B",
+        "color14": "#9294AA",
+        "color15": "#C0C1CC"
     }
 }

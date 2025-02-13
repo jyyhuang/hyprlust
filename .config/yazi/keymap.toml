@@ -8,8 +8,8 @@
 prepend_keymap = [
   {on   = [ "l" ],run  = "plugin smart-enter",desc = "Enter the child directory, or open the file"},
   {on   = [ "p" ],run  = "plugin smart-paste",desc = "Paste into the hovered directory or CWD"},
-  {on  = [ "k" ],run = "plugin arrow --args=-1"},
-  {on  = [ "j" ],run = "plugin arrow --args=1"},
+  {on  = [ "k" ],run = "plugin arrow -1"},
+  {on  = [ "j" ],run = "plugin arrow 1"},
 ]
 
 keymap = [
@@ -56,8 +56,8 @@ keymap = [
 	{ on = [ "<Left>" ],  run = "leave",    desc = "Go back to the parent directory" },
 	{ on = [ "<Right>" ], run = "enter",    desc = "Enter the child directory" },
 
-	{ on = [ "g", "g" ], run = "arrow -99999999", desc = "Move cursor to the top" },
-	{ on = [ "G" ],      run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+	{ on = [ "g", "g" ], run = "arrow top", desc = "Move cursor to the top" },
+	{ on = [ "G" ],      run = "arrow bottom",  desc = "Move cursor to the bottom" },
 
 	# Selection
 	{ on = [ "<Space>" ], run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },

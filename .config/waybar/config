@@ -2,7 +2,7 @@
   "layer": "bottom",
   "position": "top",
   "height": 30,
-  "margin": "3, 0, 0, 0",
+  "margin": "3, 4, 0, 4",
   "modules-left": ["custom/icon", "hyprland/workspaces", "memory"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
@@ -58,9 +58,9 @@
   },
 
   "network": {
-    "format": "{icon} ",
+    "format": "{icon} {essid}",
     "format-alt-click": "click-right",
-    "format-wifi": "{icon} ",
+    "format-wifi": "{icon} {essid}",
     "format-disconnected": "{icon} Disconnected",
     "format-icons": {
       "wifi": ["󰖩"],
