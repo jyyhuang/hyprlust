@@ -61,7 +61,7 @@ userimage {
     border:                      2px;
     border-radius:               100%;
     background-color:            transparent;
-    background-image:            url("~/wallpapers/pink_cat.png", both);
+    background-image:            url("~/.config/rofi/themes/powermenu/pink_cat.png", both);
 }
 
 /*****----- Inputbar -----*****/
