@@ -1,7 +1,7 @@
 <h1 align="center">💖 Hyprlust </h1>
 
 <div align="center">
-![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/117778296?s=400&u=904415457b9181c658d1a8da41c17fdf02d5c505&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d)
+<img src="https://i.imgur.com/MXapNzU.png" height="auto" width="175"></img>
 </div>
 
 <h4 align="center"> Hyprland with Wallust</h4>
