@@ -4,7 +4,7 @@
 <img src="https://i.imgur.com/MXapNzU.png" height="auto" width="175"></img>
 </div>
 
-<h4 align="center"> Hyprland with Wallust</h4>
+<h3 align="center"> Hyprland with Wallust</h4>
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png">
 
