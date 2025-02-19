@@ -1,21 +1,21 @@
 <h1 align="center">💖 Hyprlust </h1>
 
-<div align="center"><img src="https://i.imgur.com/eRgU57e.jpeg" height="auto" width="175" style="border-radius:50%"></img></div>
+<div align="center">
+![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/117778296?s=400&u=904415457b9181c658d1a8da41c17fdf02d5c505&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d)
+</div>
 
 <h4 align="center"> Hyprland with Wallust</h4>
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png">
 
-This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprland) setup, featuring dynamic color schemes powered by [Wallust](https://codeberg.org/explosion-mental/wallust). Updates will be infrequent and typically only happen if something breaks. 
+This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprland) setup, featuring dynamic color schemes powered by [Wallust](https://codeberg.org/explosion-mental/wallust). Updates will be infrequent and typically only happen if something breaks.
 
 The included script automates the installation of packages and sets up Paru for package management.
 
 Oh, and it's Arch BTW... just kidding (unless).
 
-
 > [!WARNING]
-> These are my personal dot files and may not work for everyone
->
+> These are my personal dot files and may not work for everyone.<br>
 > Use at your own risk
 
 ## 📝 Details
@@ -31,6 +31,7 @@ Oh, and it's Arch BTW... just kidding (unless).
 - **Browser**: Firefox
 
 ## 📸 Gallery
+
 ![lain](screenshots/lain.png)
 ![terminal](screenshots/terminal.png)
 ![rofi_sway_sc](screenshots/rofi_sway_sc.png)
@@ -39,4 +40,3 @@ Oh, and it's Arch BTW... just kidding (unless).
 ![rofi_wallpaper_sc](screenshots/rofi_wallpaper_sc.png)
 ![hyprlock_sc](screenshots/hyprlock_sc.png)
 ![sddm_sc](screenshots/sddm_sc.png)
-
