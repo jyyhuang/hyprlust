@@ -15,8 +15,7 @@ The included script automates the installation of packages and sets up Paru for 
 Oh, and it's Arch BTW... just kidding (unless).
 
 > [!WARNING]
-> These are my personal dot files and may not work for everyone.<br>
-> Use at your own risk
+> These are my personal dot files and may not work for everyone, use at your own risk.
 
 ## 📝 Details
 
