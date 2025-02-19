@@ -14,8 +14,9 @@ Oh, and it's Arch BTW... just kidding (unless).
 
 
 > [!WARNING]
-> These are my personal dot files and may not work for everyone.
-> Use at your own risk.
+> These are my personal dot files and may not work for everyone
+>
+> Use at your own risk
 
 ## 📝 Details
 
