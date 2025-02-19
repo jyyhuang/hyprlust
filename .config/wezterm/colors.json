@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/home/joyjosr/wallpapers/snow.jpeg",
+    "wallpaper": "/home/joyjosr/wallpapers/frieren.jpg",
     "alpha": "100",
 
     "special": {
-        "background": "#000003",
-        "foreground": "#ECE5E6",
-        "cursor": "#ECE5E6"
+        "background": "#1C191B",
+        "foreground": "#F7EFE8",
+        "cursor": "#F7EFE8"
     },
     "colors": {
-        "color0": "#000004",
-        "color1": "#565B61",
-        "color2": "#675A5B",
-        "color3": "#887779",
-        "color4": "#537A98",
-        "color5": "#808990",
-        "color6": "#978989",
-        "color7": "#DCD2D3",
-        "color8": "#9A9393",
-        "color9": "#5F666E",
-        "color10": "#766467",
-        "color11": "#927578",
-        "color12": "#6FA3CA",
-        "color13": "#ABB7C0",
-        "color14": "#C9B6B7",
-        "color15": "#DCD2D3"
+        "color0": "#474446",
+        "color1": "#676266",
+        "color2": "#A25B5B",
+        "color3": "#8B7E80",
+        "color4": "#90837E",
+        "color5": "#9F816C",
+        "color6": "#AE9D8D",
+        "color7": "#EBE0D5",
+        "color8": "#A59D95",
+        "color9": "#766F75",
+        "color10": "#C56766",
+        "color11": "#927C80",
+        "color12": "#A8938C",
+        "color13": "#CDA386",
+        "color14": "#E8D2BC",
+        "color15": "#EBE0D5"
     }
 }

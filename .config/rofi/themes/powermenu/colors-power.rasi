@@ -1,14 +1,14 @@
 #userimage {
-    border-color: #927578;
+    border-color: #927C80;
 }
 
 #prompt{
-      text-color: #766467;
+      text-color: #C56766;
 }
 
 #message {
     background-color:           transparent;
-    text-color: #766467;
+    text-color: #C56766;
 }
 
 #window {
@@ -16,17 +16,17 @@
 }
 
 #textbox{
-    placeholder-color:           #766467;
+    placeholder-color:           #C56766;
 }
 
 #listview{
     background-color:            transparent;
-    text-color:                  #978989;
+    text-color:                  #AE9D8D;
 }
 
 #element {
     background-color:            transparent;
-    text-color:                  #C9B6B7;
+    text-color:                  #E8D2BC;
 }
 
 #element-text {
@@ -35,6 +35,6 @@
 }
 
 #element.selected.normal {
-    background-color:            #978989;
-    text-color:                  #000003;
+    background-color:            #AE9D8D;
+    text-color:                  #1C191B;
 }

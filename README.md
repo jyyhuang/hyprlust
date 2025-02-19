@@ -1,4 +1,4 @@
-<h1 align="center">💖 My Hyperland config files 💖</h1>
+<h1 align="center">💖 My Hyprland config files 💖</h1>
 
 
 # Details
