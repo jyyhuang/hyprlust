@@ -61,7 +61,6 @@ userimage {
     border:                      2px;
     border-radius:               100%;
     background-color:            transparent;
-    background-image:            url("~/wallpapers/pink_cat.png", both);
 }
 
 /*****----- Inputbar -----*****/

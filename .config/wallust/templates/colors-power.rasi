@@ -1,5 +1,6 @@
 #userimage {
     border-color: {{color11}};
+    background-image:            url("{{wallpaper}}", both);
 }
 
 #prompt{

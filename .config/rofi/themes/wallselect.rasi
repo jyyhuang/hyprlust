@@ -21,7 +21,7 @@ mainbox {
     children:                    ["inputbar","listview" ];
     spacing:                     24px;
     margin:                      0px;
-    padding:                     64px;
+    padding:                     50px;
 }
 
 listview {
