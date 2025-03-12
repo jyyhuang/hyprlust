@@ -13,8 +13,8 @@ This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprlan
 Oh, and it's Arch BTW... just kidding (unless).
 
 > [!WARNING]
-> These are my personal dot files and may not work for everyone, use at your own risk.
-> Packages may not be up to date.
+> These are my personal dot files and may not work for everyone.<br>
+> Packages may not be up to date, use at your own risk.
 
 ## 📝 Details
 
