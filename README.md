@@ -8,12 +8,13 @@
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png">
 
-This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprland) setup, featuring dynamic color schemes powered by [Wallust](https://codeberg.org/explosion-mental/wallust). The included script automates the installation of packages and sets up Paru for package management.
+This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprland) setup, featuring dynamic color schemes powered by [Wallust](https://codeberg.org/explosion-mental/wallust). The included script automates the installation of packages and sets up Paru for package management. Updates to packages will be infrequent and typically only occur if something breaks.
 
 Oh, and it's Arch BTW... just kidding (unless).
 
 > [!WARNING]
 > These are my personal dot files and may not work for everyone, use at your own risk.
+> Packages may not be up to date.
 
 ## 📝 Details
 
