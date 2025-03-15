@@ -1,23 +1,23 @@
-@define-color cursor #D0F0F3;
-@define-color foreground #D0F0F3;
-@define-color color0  #00070F;
-@define-color color1  #4B6877;
-@define-color color2  #6A6274;
-@define-color color3  #5E7589;
-@define-color color4  #90728F;
-@define-color color5  #998D9C;
-@define-color color6  #5AA0A6;
-@define-color color7  #B3E2E6;
-@define-color color8  #7D9EA1;
-@define-color color9  #50778C;
-@define-color color10 #7B7087;
-@define-color color11 #5A7C9A;
-@define-color color12 #9E6D9C;
-@define-color color13 #CCBCD0;
-@define-color color14 #78D5DE;
-@define-color color15 #B3E2E6;
+@define-color cursor #F0EBE1;
+@define-color foreground #F0EBE1;
+@define-color color0  #272523;
+@define-color color1  #817971;
+@define-color color2  #7E7F77;
+@define-color color3  #867E71;
+@define-color color4  #8E826F;
+@define-color color5  #978477;
+@define-color color6  #9E947E;
+@define-color color7  #E1DACB;
+@define-color color8  #9D988E;
+@define-color color9  #86796B;
+@define-color color10 #818375;
+@define-color color11 #A29582;
+@define-color color12 #BDAE94;
+@define-color color13 #C9B09F;
+@define-color color14 #D3C5A8;
+@define-color color15 #E1DACB;
 
 
 #waybar{
-  background: rgba(0,1,8,0.80);
+  background: rgba(15,14,12,0.80);
 }
