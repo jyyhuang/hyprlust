@@ -1,15 +1,15 @@
 #userimage {
-    border-color: #A29582;
-    background-image:            url("/home/joyjosr/wallpapers/grey_lain_wallpaper.jpg", both);
+    border-color: #5A7C9A;
+    background-image:            url("/home/joyjosr/wallpapers/miku.jpg", both);
 }
 
 #prompt{
-      text-color: #818375;
+      text-color: #7B7087;
 }
 
 #message {
     background-color:           transparent;
-    text-color: #818375;
+    text-color: #7B7087;
 }
 
 #window {
@@ -17,17 +17,17 @@
 }
 
 #textbox{
-    placeholder-color:           #818375;
+    placeholder-color:           #7B7087;
 }
 
 #listview{
     background-color:            transparent;
-    text-color:                  #9E947E;
+    text-color:                  #5AA0A6;
 }
 
 #element {
     background-color:            transparent;
-    text-color:                  #D3C5A8;
+    text-color:                  #78D5DE;
 }
 
 #element-text {
@@ -36,6 +36,6 @@
 }
 
 #element.selected.normal {
-    background-color:            #9E947E;
-    text-color:                  #0F0E0C;
+    background-color:            #5AA0A6;
+    text-color:                  #000108;
 }

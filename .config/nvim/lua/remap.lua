@@ -81,16 +81,13 @@ vim.keymap.set(
 	{ desc = "Replace all words after current line" }
 )
 
---Neogit
-vim.keymap.set("n", "<Leader>gg", vim.cmd.Neogit, { desc = "Switch to left panel" })
-
 -- None ls
 vim.keymap.set({ "n", "v" }, "<Leader>mp", vim.lsp.buf.format, { desc = "Format" })
 
--- Oil
+-- yazi
 vim.keymap.set("n", "-", function()
 	require("yazi").yazi()
-end, { desc = "Open parent directory" })
+end, { desc = "Open yazi" })
 
 -- highlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove highlight" })
