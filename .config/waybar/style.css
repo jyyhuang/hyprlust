@@ -7,8 +7,17 @@
   font-size: 18px;
 }
 
+#bluetooth, #mode, #battery, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpris, #clock, #custom-icon, #workspaces, #window, #custom-power, #memory, #cava, #cpu {
+  color: @color14;
+  margin: 4px 2px;
+  padding: 0 6px;
+  border-radius: 20px;
+  min-width: 10px;
+  background-color: transparent;
+}
+
 window#waybar.empty #window {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #waybar {
@@ -29,15 +38,7 @@ window#waybar.empty #window {
 
 #workspaces button.visible {
   background: @color1;
-}
-
-#bluetooth, #mode, #battery, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpris, #clock, #custom-icon, #workspaces, #window, #custom-power, #memory {
-  color: @color14;
-  margin: 4px 2px;
-  padding: 0 6px;
-  border-radius: 20px;
-  min-width: 10px;
-  background-color: transparent;
+  border-radius:20px;
 }
 
 #clock {
@@ -50,13 +51,12 @@ window#waybar.empty #window {
 }
 
 #custom-icon{
-  margin: 4px 1px 4px 5px;
-  border-radius: 10px;
+  margin: 4px 0px 4px 6px;
   min-width: 15px;
 }
 
-#window {
-    padding-left: 15px;
-    padding-right: 15px;
+#idle_inhibitor
+{
+  margin-right:6px;
 }
 

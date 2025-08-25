@@ -1,0 +1,166 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 40,
+  "margin": "3, 4, 0, 4",
+  "modules-left": ["custom/icon", "hyprland/workspaces", "mpris", "cava"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "idle_inhibitor",
+    "memory",
+    "cpu",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "battery",
+    "clock",
+  ],
+  "reload_style_on_change": true,
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十"
+    },
+    "persistent-workspaces":{
+      "*": 5
+    }
+  },
+
+  "custom/icon": {
+    "format": ""
+  },
+
+  "clock": {
+    "rotate": 0,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "format": " {:%I:%M %p}",
+    "format-alt": " {:%a, %b %d}",
+	  "calendar": {
+      "format": {
+        "today": "<span color='#ffffff'><b>{}</b></span>"
+      }
+    },
+    "on-click-right": "wezterm start calcurse"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "format-alt": "{time}",
+    "on-click-right": "auto-cpufreq-gtk"
+
+  },
+
+  "network": {
+    "format": "{icon} ",
+    "format-alt-click": "click-right",
+    "format-wifi": "{icon} ",
+    "format-disconnected": "{icon} Disconnected",
+    "format-icons": {
+      "wifi": ["󰖩"],
+      "disconnected": ["󰖪"]
+    },
+    "on-click": "wezterm start nmtui",
+    "tooltip-format": "{ifname}: {ipaddr}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}{volume}%",
+    "format-bluetooth": "{icon}{volume}%",
+    "format-bluetooth-muted": " ",
+    "format-muted": " ",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": [" ", " ", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+
+  "mpris": {
+    "interval": 1,
+  	"format": " {player_icon} {title} - {artist}",
+  	"format-paused": " {status_icon} <i>{title} - {artist}</i>",
+  	"player-icons": {
+  		"default": "▶",
+  	},
+  	"status-icons": {
+  		"paused": "⏸"
+  	},
+    "max-length": 20,
+	  "ignored-players": ["firefox"]
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "separate-outputs": true,
+    "icon": true,
+    "max-length": 25
+  },
+
+  "bluetooth": {
+      "format": " {status}",
+      "format-disabled": " {status}",
+      "format-connected": "{num_connections} connected",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "format-alt-click": "click-right",
+      "on-click": "blueman-manager",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {used:0.1f}G/{total:0.1f}G"
+  },
+  "cava": {
+        "framerate": 60,
+        "autosens": 1,
+        "bars": 8,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "method": "pipewire",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%",
+    "format-alt": " {avg_frequency}",
+  }
+}
+

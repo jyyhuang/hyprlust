@@ -7,3 +7,16 @@ electron-builder.json
 systemd/
 spotify/
 Projucer/
+GIMP/
+kde.org/
+session/
+dconf/
+gtk-3.0/
+Kvantum/
+pulse/
+qt5ct/
+qt6ct/
+xsettingsd/
+dolphinrc
+pavucontrol.ini
+chromium/

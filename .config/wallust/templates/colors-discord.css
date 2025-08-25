@@ -13,7 +13,7 @@
 /* SETTINGS */
 :root {
   /* ACCENT COLORS */
-  --main-color: {{color14}};
+  --main-color: {{color1}};
   --hover-color: {{color14}};
   --success-color: {{color3}};
   --danger-color: {{color1}};

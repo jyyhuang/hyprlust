@@ -33,6 +33,7 @@ if [ ! -f "$AUR_LIST" ]; then
 fi
 
 # Install Pacman packages
+# comm -23 <(pacman -Qqe | sort) <(pacman -Qqm | sort) > pkglist.txt
 if ask_confirmation "Do you want to install Pacman packages?"; then
   echo "Updating system and installing official packages..."
   if ! sudo pacman -Syu --needed - <"$PKG_LIST"; then
@@ -59,6 +60,7 @@ if ! command -v paru &>/dev/null; then
 fi
 
 # Install AUR packages
+# pacman -Qqm > aurlist.txt
 if ask_confirmation "Do you want to install AUR packages?"; then
   echo "Installing AUR packages..."
   if ! paru -S --needed - <"$AUR_LIST"; then

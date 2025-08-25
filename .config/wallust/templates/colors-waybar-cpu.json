@@ -1,0 +1,16 @@
+{
+  "cpu": {
+     "interval": 1,
+     "format": "󰍛 {icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+     "format-icons": [
+          "<span color='{{color14}}'>▁</span>", 
+          "<span color='{{color13}}'>▂</span>", 
+          "<span color='{{color9}}'>▃</span>",
+          "<span color='{{color10}}'>▄</span>", 
+          "<span color='{{color13}}'>▅</span>", 
+          "<span color='{{color13}}'>▆</span>", 
+          "<span color='{{color12}}'>▇</span>", 
+          "<span color='{{color12}}'>█</span>"  
+     ]
+  },
+}

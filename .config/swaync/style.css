@@ -45,7 +45,7 @@
 @define-color bg2       @color2;
 
 * {
-  font-family: Hack Nerd Font;
+  font-family: Monocraft Nerd Font;
   color: @foreground;
   /* font-weight: bolder; */
 }
@@ -54,12 +54,20 @@ scale trough {
   min-height: 5px;
 }
 
+.notification-row .notification-background {
+  padding: 0;
+}
+
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
   background: alpha(@red, 0.25);
   border-radius: 0px;
   margin: 0px;
+}
+
+.control-center .notification-row .notification-background {
+  padding: 6px 12px;
 }
 
 .notification {
@@ -264,7 +272,7 @@ scale trough {
 
 .floating-notifications .notification-row {
   background: transparent;
-  margin: 15px 10px 0 0;
+  margin: 0;
 }
 
 .blank-window {

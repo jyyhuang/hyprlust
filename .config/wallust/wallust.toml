@@ -77,6 +77,7 @@ alpha = 100
 [templates]
 hyprland = { src = 'colors-hyprland.conf', dst = '~/.config/hypr/colors-hyprland.conf'}
 waybar = { src = 'colors-waybar.css', dst = '~/.config/waybar/colors.css'}
+waybar-cpu = { src = 'colors-waybar-cpu.json', dst = '~/.config/waybar/cpu.json'}
 wezterm = { src = 'colors.json', dst = '~/.config/wezterm/colors.json'}
 swaync = { src = 'colors.css', dst = '~/.config/swaync/colors.css'}
 rofi = {src = 'colors-rofi.rasi', dst = '~/.config/rofi/themes/colors-rofi.rasi'}
