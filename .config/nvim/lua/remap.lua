@@ -2,45 +2,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- LSP keymaps
-vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
-	callback = function(event)
-		local map = function(keys, func, desc)
-			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
-		end
-
-		map("[d", vim.diagnostic.goto_prev, "Prev diagnostic")
-		map("]d", vim.diagnostic.goto_next, "Next diagnostic")
-
-		map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-
-		map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-
-		map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-
-		map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-
-		map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-
-		map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-
-		map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
-
-		map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-
-		map("H", vim.lsp.buf.hover, "Hover Documentation")
-
-		map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-	end,
-})
-
 vim.diagnostic.config({
 	float = {
 		focusable = true,
 		style = "minimal",
 		border = "rounded",
-		source = "always",
 		header = "",
 		prefix = "",
 	},
@@ -80,9 +46,6 @@ vim.keymap.set(
 	":,$s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
 	{ desc = "Replace all words after current line" }
 )
-
--- None ls
-vim.keymap.set({ "n", "v" }, "<Leader>mp", vim.lsp.buf.format, { desc = "Format" })
 
 -- yazi
 vim.keymap.set("n", "-", function()
