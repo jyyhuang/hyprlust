@@ -37,4 +37,3 @@ Oh, and it's Arch BTW... just kidding (unless).
 ![wallpapers](screenshots/wallpapers.png)
 ![power](screenshots/power.png)
 ![hyprlock_sc](screenshots/hyprlock_sc.png)
-![sddm_sc](screenshots/sddm_sc.png)
