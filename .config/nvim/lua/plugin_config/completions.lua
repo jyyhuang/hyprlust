@@ -1,106 +1,79 @@
 return {
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-    end,
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",
-      "hrsh7th/cmp-cmdline",
-      "saadparwaiz1/cmp_luasnip",
-      "rafamadriz/friendly-snippets",
-      "onsails/lspkind.nvim",
-    },
-    config = function()
-      local cmp = require("cmp")
-      local luasnip = require("luasnip")
-      local lspkind = require("lspkind")
+	{
+		"github/copilot.vim",
+		cmd = "Copilot",
+		event = "BufWinEnter",
+		init = function()
+			vim.g.copilot_no_maps = true
+		end,
+		config = function()
+			-- Block the normal Copilot suggestions
+			vim.api.nvim_create_augroup("github_copilot", { clear = true })
+			vim.api.nvim_create_autocmd({ "FileType", "BufUnload" }, {
+				group = "github_copilot",
+				callback = function(args)
+					vim.fn["copilot#On" .. args.event]()
+				end,
+			})
+			vim.fn["copilot#OnFileType"]()
+		end,
+	},
+	{
+		"saghen/blink.cmp",
+		dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
 
-      local check_backspace = function()
-        local col = vim.fn.col(".") - 1
-        return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-      end
+		version = "1.*",
 
-      require("luasnip.loaders.from_vscode").lazy_load()
+		opts = {
+			keymap = {
+				preset = "default",
 
-      cmp.setup({
-        completion = {
-          completeopt = "menu, menuone, preview, noselect",
-        },
-        snippet = {
-          -- REQUIRED - you must specify a snippet engine
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = false }),
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.expandable() then
-              luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            elseif check_backspace() then
-              fallback()
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
+				["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+				["<C-e>"] = { "hide", "fallback" },
+				["<CR>"] = { "select_and_accept", "fallback" },
 
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-        }),
-        sources = cmp.config.sources({
-          { name = "copilot" },
-          { name = "luasnip" },
-          { name = "nvim_lsp" },
-          { name = "buffer" },
-          { name = "path" },
-        }),
-        formatting = {
-          format = lspkind.cmp_format({
-            mode = "symbol",
-            maxwidth = 50,
-            ellipsis_char = "...",
-            symbol_map = { Copilot = "" },
-          }),
-        },
-      })
-    end,
-  },
+				["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+				["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+
+				["<C-b>"] = { "scroll_documentation_up", "fallback" },
+				["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+				["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+			},
+
+			appearance = {
+				nerd_font_variant = "mono",
+			},
+
+			completion = {
+				list = { selection = { preselect = true, auto_insert = false } },
+				menu = {
+					border = "rounded",
+					draw = {
+						columns = {
+							{ "label", "label_description" },
+							{ "kind_icon", gap = 1, "kind" },
+						},
+					},
+				},
+				documentation = { auto_show = true, auto_show_delay_ms = 0, window = { border = "rounded" } },
+			},
+
+			sources = {
+				default = { "lsp", "path", "copilot", "snippets", "buffer" },
+				providers = {
+					copilot = {
+						name = "copilot",
+						module = "blink-copilot",
+						score_offset = 100,
+						async = true,
+					},
+				},
+			},
+
+			fuzzy = { implementation = "prefer_rust_with_warning" },
+			signature = { enabled = true, window = { border = "rounded" } },
+		},
+		opts_extend = { "sources.default" },
+	},
 }

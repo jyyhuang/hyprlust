@@ -50,7 +50,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.showmatch = true
 vim.opt.matchtime = 2
-vim.opt.colorcolumn = "100"
 
 -- behavior
 vim.opt.backspace = "indent,eol,start"
@@ -61,12 +60,11 @@ vim.opt.modifiable = true
 vim.opt.virtualedit = "block"
 
 vim.opt.title = true
-vim.opt.titlestring = 'nvim: %{expand("%:t")}'
+vim.opt.titlestring = "%t"
 vim.opt.titleold = "zsh"
-
--- views can only be fully collapsed with the global statusline-- views can only be fully collapsed with the global statusline
-vim.opt.laststatus = 3
 
 -- cursor
 vim.opt.guicursor =
 	"n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+-- views can only be fully collapsed with the global statusline-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3

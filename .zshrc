@@ -7,13 +7,6 @@
 pokeget piplup --hide-name
 echo
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Paths
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 
@@ -29,9 +22,6 @@ promptinit
 
 bindkey -v
 
-# End of lines added by compinstall
-# Plugins
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 unsetopt beep
@@ -64,12 +54,14 @@ bindkey '^I' autosuggest-accept
 
 # Bind Ctrl+F to the desired command
 # Bind Ctrl+F (represented as "^F") to call the fzf_open function
-bindkey -s '^F' 'file=$(find . | fzf --preview "bat --style=numbers --color=always {}") && cd $(dirname "$file") && nvim "$file"\n'
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+bindkey -s '^F' 'file=$(find . | fzf --preview "bat --style=numbers --color=always {}") && nvim "$file" && cd $(dirname "$file")\n'
 
 export ZSH_AUTOSUGGEST_STRATEGY=(
     history
     completion
 )
+
+export EDITOR="nvim"
+export VISUAL="$EDITOR"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(starship init zsh)"

@@ -38,9 +38,10 @@
   --user-modal-filter: var(--background-filter);
   /* HOME ICON */
   --home-icon: url(https://clearvision.github.io/icons/discord.svg);
-  /* FONTS */
-  --main-font: Monocraft Nerd Font, monospace;
-  --code-font: Monocraft Nerd Font, monospace;
+  /* FONTS 
+  *--main-font: Monocraft Nerd Font, monospace;
+  *--code-font: Monocraft Nerd Font, monospace;
+  */
 }
 
 /* THEME SPECIFIC SHADING */
@@ -89,3 +90,7 @@
 }
 
 /* ADD ADDITIONAL CSS BELOW HERE */
+.leading_c38106
+{
+  visibility:hidden;
+}

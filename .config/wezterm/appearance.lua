@@ -15,7 +15,11 @@ function module.apply_to_config(config)
 		return parse_json(body)
 	end
 	local wallust_colors_path = os.getenv("HOME") .. "/.config/wezterm/colors.json"
-	local wallust_colors = read_json(wallust_colors_path)
+	local success, wallust_colors = pcall(read_json, wallust_colors_path)
+	if not success then
+		wezterm.log_error("Failed to load colors.json: " .. wallust_colors)
+		return
+	end
 
 	local function hex2rgba(hex, alpha)
 		hex = hex:gsub("#", "")
@@ -26,20 +30,23 @@ function module.apply_to_config(config)
 	end
 
 	config.automatically_reload_config = true
-	wezterm.add_to_config_reload_watch_list("/home/joyjosr/.config/wezterm/colors.json")
+	wezterm.add_to_config_reload_watch_list(wallust_colors_path)
 
 	config.window_close_confirmation = "AlwaysPrompt"
 	config.window_decorations = "NONE"
 
-	config.tab_max_width = 50
+	config.tab_max_width = 30
 	config.scrollback_lines = 3000
 	config.front_end = "OpenGL"
 	config.adjust_window_size_when_changing_font_size = false
+	config.max_fps = 120
+	config.animation_fps = 120
 
-	config.window_background_opacity = 0.80
+	local opacity = 0.80
+	config.window_background_opacity = opacity
 	config.font = wezterm.font_with_fallback({
 		{
-			family = "Monocraft Nerd Font",
+			family = "Monocraft",
 			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 			weight = "Regular",
 		},
@@ -48,7 +55,7 @@ function module.apply_to_config(config)
 			scale = 1.3,
 		},
 	})
-	config.font_size = 16
+	config.font_size = 15
 	config.use_fancy_tab_bar = false
 
 	config.default_cursor_style = "BlinkingBlock"
@@ -61,7 +68,7 @@ function module.apply_to_config(config)
 	config.colors = {
 		split = wallust_colors.colors.color1,
 		tab_bar = {
-			background = hex2rgba(wallust_colors.special.background, 0.80),
+			background = hex2rgba(wallust_colors.special.background, opacity),
 			active_tab = {
 				bg_color = wallust_colors.colors.color14,
 				fg_color = wallust_colors.special.background,
@@ -92,27 +99,6 @@ function module.apply_to_config(config)
 		},
 	}
 
-	--	wezterm.on("update-status", function(window, pane)
-	--		local cwd = pane:get_current_working_dir().file_path
-	--		local time = wezterm.strftime("%a %b %-d %I:%M %p")
-	--
-	--		window:set_right_status(wezterm.format({
-	--			{ Background = { Color = hex2rgba(wallust_colors.special.background, 0.9) } },
-	--			{ Foreground = { Color = wallust_colors.colors.color1 } },
-	--			{ Text = "" },
-	--			{ Background = { Color = wallust_colors.colors.color1 } },
-	--			{ Foreground = { Color = wallust_colors.colors.color12 } },
-	--			{ Text = " " .. wezterm.nerdfonts.custom_folder_open },
-	--			{ Text = " ~" },
-	--			{ Text = cwd .. " " },
-	--			{ Foreground = { Color = wallust_colors.colors.color14 } },
-	--			{ Text = "" },
-	--			{ Background = { Color = wallust_colors.colors.color14 } },
-	--			{ Foreground = { Color = wallust_colors.special.background } },
-	--			{ Text = " " .. wezterm.nerdfonts.fa_calendar .. " " .. time .. " " },
-	--		}))
-	--	end)
-
 	wezterm.on("toggle-background", function(window, pane)
 		local overrides = window:get_config_overrides() or {}
 		if not overrides.window_background_opacity then
@@ -121,6 +107,41 @@ function module.apply_to_config(config)
 			overrides.window_background_opacity = nil
 		end
 		window:set_config_overrides(overrides)
+	end)
+
+	wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+		local pane = tab.active_pane
+
+		local title = pane.title or ""
+
+		if title == "" and pane.foreground_process_name then
+			title = pane.foreground_process_name
+			title = title:gsub("(.*[/\\])", "")
+		end
+
+		-- Extract cwd basename safely
+		local cwd = ""
+		if pane.current_working_dir and pane.current_working_dir.file_path then
+			cwd = pane.current_working_dir.file_path
+			cwd = cwd:gsub("/$", "")
+			cwd = cwd:match("([^/]+)$") or ""
+		end
+
+		-- Combine cwd + title
+		if cwd ~= "" then
+			title = string.format("%d: %s ~ %s", tab.tab_index + 1, cwd, title)
+		else
+			title = string.format("%d: / ~ %s", tab.tab_index + 1, title ~= "" and title or "zsh")
+		end
+
+		-- Truncate if needed
+		if #title > max_width then
+			title = wezterm.truncate_right(title, max_width - 1)
+		end
+
+		return {
+			{ Text = " " .. title .. " " },
+		}
 	end)
 
 	config.inactive_pane_hsb = {

@@ -5,7 +5,6 @@ local module = {}
 local act = wezterm.action
 
 function module.apply_to_config(config)
-
 	config.keys = {
 		{ key = "|", mods = "ALT|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 		{ key = "-", mods = "ALT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
@@ -28,6 +27,18 @@ function module.apply_to_config(config)
 		{ key = "x", mods = "ALT", action = act.ActivateCopyMode },
 
 		{
+			key = ",",
+			mods = "ALT",
+			action = act.PromptInputLine({
+				description = "Enter new name for tab",
+				action = wezterm.action_callback(function(window, pane, line)
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
+		{
 			key = ";",
 			mods = "ALT",
 			action = act.MoveTabRelative(-1),
@@ -48,6 +59,25 @@ function module.apply_to_config(config)
 			key = "b",
 			mods = "ALT",
 			action = wezterm.action.EmitEvent("toggle-background"),
+		},
+
+		{
+			key = ".",
+			mods = "ALT",
+			action = act.PromptInputLine({
+				description = "Enter new name for session",
+				action = wezterm.action_callback(function(window, pane, line)
+					if line then
+						wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+					end
+				end),
+			}),
+		},
+
+		{
+			key = "s",
+			mods = "ALT",
+			action = act.ShowLauncherArgs({ flags = "WORKSPACES" }),
 		},
 	}
 

@@ -3,11 +3,25 @@
 * {
   transition: none;
   box-shadow: none;
-  font-family: Monocraft Nerd Font;
+  font-family: Monocraft;
   font-size: 18px;
 }
 
-#bluetooth, #mode, #battery, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpris, #clock, #custom-icon, #workspaces, #window, #custom-power, #memory, #cava, #cpu {
+#bluetooth,
+#mode,
+#battery,
+#network,
+#pulseaudio,
+#idle_inhibitor,
+#backlight,
+#mpris,
+#clock,
+#custom-icon,
+#workspaces,
+#window,
+#custom-power,
+#memory,
+#cpu {
   color: @color14;
   margin: 4px 2px;
   padding: 0 6px;
@@ -38,25 +52,23 @@ window#waybar.empty #window {
 
 #workspaces button.visible {
   background: @color1;
-  border-radius:20px;
+  border-radius: 20px;
 }
 
 #clock {
   margin: 4px 2px;
 }
 
-#custom-power{
+#custom-power {
   margin: 5px 10px 5px 0;
   padding: 0 10px 0 7px;
 }
 
-#custom-icon{
+#custom-icon {
   margin: 4px 0px 4px 6px;
   min-width: 15px;
 }
 
-#idle_inhibitor
-{
-  margin-right:6px;
+#idle_inhibitor {
+  margin-right: 6px;
 }
-

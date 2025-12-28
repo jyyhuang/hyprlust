@@ -60,3 +60,10 @@ vim.keymap.set("n", "<C-Up>", "<cmd>resize +5<cr>", { desc = "Increase Window He
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -5<cr>", { desc = "Decrease Window Height" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize -5<cr>", { desc = "Increase Window Width" })
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize +5<cr>", { desc = "Decrease Window Width" })
+
+-- copilot
+vim.keymap.set("i", "<C-Enter>", 'copilot#Accept("\\<CR>")', {
+	expr = true,
+	replace_keycodes = false,
+})
+vim.g.copilot_no_tab_map = true

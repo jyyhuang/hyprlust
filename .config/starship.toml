@@ -1,0 +1,141 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$os\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+$docker_context\
+$character"""
+
+[os]
+disabled = false
+style = "bg:none fg:cyan"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[directory]
+style = "bg:none fg:white"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol $branch ](fg:cyan bg:none)]($style)'
+
+[git_status]
+style = "bg:none"
+format = '[[$diverged](7)[$ahead_behind](7)[$staged](#5FD700)[$modified$renamed](#D6AE00)[$deleted](#F52A65)[$untracked](9)[$conflicted](#F52A65)[$stashed](10)]($style)'
+stashed = '*${count} '
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕${count} "
+conflicted = "=${count} "
+deleted = "✘${count} "
+renamed = "»${count} "
+modified = "!${count} "
+staged = "+${count} "
+untracked = "?${count} "
+
+[nodejs]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[c]
+symbol = " "
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[php]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[java]
+symbol = " "
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $version) ](fg:purple bg:none)]($style)'
+
+[python]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $version)(\(#$virtualenv\)) ](fg:purple bg:none)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:none"
+format = '[[$symbol( $context) ](fg:purple bg:none)]($style)'
+
+[time]
+disabled = true
+time_format = "%R"
+style = "bg:none"
+format = '[[ $time ](fg:purple bg:none)]($style)'
+
+[character]
+disabled = false
+success_symbol = '[»](bold fg:blue)'
+error_symbol = '[»](bold fg:cyan)'
+vimcmd_symbol = '[«](bold fg:blue)'
+vimcmd_replace_one_symbol = '[«](bold fg:cyan)'
+vimcmd_replace_symbol = '[«](bold fg:cyan)'
+vimcmd_visual_symbol = '[«](bold fg:yellow)'

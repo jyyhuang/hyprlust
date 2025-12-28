@@ -7,7 +7,7 @@ return {
 		lazy = false,
 		dependencies = {
 			"mason-org/mason-lspconfig.nvim",
-			"hrsh7th/cmp-nvim-lsp",
+			"saghen/blink.cmp",
 			"neovim/nvim-lspconfig",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
@@ -26,36 +26,25 @@ return {
 					},
 				},
 			})
-			mason_lspconfig.setup({
-				-- servers for mason to install
-				ensure_installed = {
-					"lua_ls",
-					"ts_ls", -- currently using a ts plugin
-					"html",
-					"cssls",
-					"emmet_ls",
-					"marksman",
-				},
-			})
+			mason_lspconfig.setup()
 
 			mason_tool_installer.setup({
 				ensure_installed = {
+					-- Tools
 					"stylua",
 					"black",
 					"isort",
 					"prettierd",
 					"prettier",
 					"eslint_d",
+
+					--Lsp
+					"lua_ls",
+					"ts_ls",
+					"html",
+					"cssls",
+					"marksman",
 				},
-			})
-
-			-- Setup servers
-			local cmp_nvim_lsp = require("cmp_nvim_lsp")
-			local capabilities = cmp_nvim_lsp.default_capabilities()
-
-			-- Global LSP settings (applied to all servers)
-			vim.lsp.config("*", {
-				capabilities = capabilities,
 			})
 
 			-- Define sign icons for each severity

@@ -33,7 +33,7 @@ if [ ! -f "$AUR_LIST" ]; then
 fi
 
 # Install Pacman packages
-# comm -23 <(pacman -Qqe | sort) <(pacman -Qqm | sort) > pkglist.txt
+# pacman -Qqen > pkglist.txt
 if ask_confirmation "Do you want to install Pacman packages?"; then
   echo "Updating system and installing official packages..."
   if ! sudo pacman -Syu --needed - <"$PKG_LIST"; then
@@ -60,7 +60,7 @@ if ! command -v paru &>/dev/null; then
 fi
 
 # Install AUR packages
-# pacman -Qqm > aurlist.txt
+# pacman -Qqem > aurlist.txt
 if ask_confirmation "Do you want to install AUR packages?"; then
   echo "Installing AUR packages..."
   if ! paru -S --needed - <"$AUR_LIST"; then
@@ -70,3 +70,23 @@ if ask_confirmation "Do you want to install AUR packages?"; then
 fi
 
 echo "All packages installed successfully."
+
+# Enable and start services
+SERVICES=("ufw.service" "reflector.timer" "grub-btrfsd.service" "bluetooth.service")
+
+echo "The following systemd units will be enabled and started:"
+for svc in "${SERVICES[@]}"; do
+  echo "  • $svc"
+done
+echo
+
+if ask_confirmation "Do you want to enable and start system services?"; then
+  for svc in "${SERVICES[@]}"; do
+    echo "Enabling and starting $svc..."
+    if ! sudo systemctl enable --now "$svc"; then
+      echo "Failed to enable/start $svc"
+    fi
+  done
+fi
+
+echo "All packages installed successfully and services enabled (if selected)."

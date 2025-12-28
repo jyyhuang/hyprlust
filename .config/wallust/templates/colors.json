@@ -8,7 +8,7 @@
         "cursor": "{{cursor}}"
     },
     "colors": {
-        "color0": "{{color0}}",
+        "color0": "{{background}}",
         "color1": "{{color1}}",
         "color2": "{{color2}}",
         "color3": "{{color3}}",

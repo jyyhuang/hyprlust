@@ -1,9 +1,5 @@
 /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
 /* Hide page scrollbars */
-html {
-  scrollbar-width: none !important;
-}
-
 @-moz-document url(about:blank), url(about:newtab), url(about:home) {
   body {
     --pywalfox-font-size: 1rem;
@@ -156,10 +152,6 @@ html {
 }
 /********************* END PYWALFOX CUSTOM CSS *********************/
 
-body,
-html {
-  overflow-y: auto;
-}
 /*  Devtools  */
 @-moz-document url-prefix(about:devtools) {
   #toolbox-container {
