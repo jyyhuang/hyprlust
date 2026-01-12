@@ -1,4 +1,3 @@
-arc-gtk-theme
 opencode-bin
 paru
 paru-debug

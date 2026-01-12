@@ -1,11 +1,9 @@
 7zip
-age
+adw-gtk-theme
 amd-ucode
 base
 base-devel
 bat
-blueman
-bluez-utils
 brightnessctl
 btop
 btrfs-progs
@@ -51,6 +49,7 @@ man-db
 man-pages
 mtools
 nano
+ncdu
 neovim
 networkmanager
 nodejs
@@ -74,6 +73,7 @@ qt5-wayland
 qt5ct
 qt6-wayland
 qt6ct
+quickshell
 reflector
 resvg
 rofi
@@ -85,6 +85,7 @@ spotify-launcher
 starship
 swww
 timeshift
+tk
 trash-cli
 ttf-hack-nerd
 ufw

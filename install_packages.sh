@@ -72,7 +72,7 @@ fi
 echo "All packages installed successfully."
 
 # Enable and start services
-SERVICES=("ufw.service" "reflector.timer" "grub-btrfsd.service" "bluetooth.service")
+SERVICES=("NetworkManager.service" "ufw.service" "reflector.timer" "grub-btrfsd.service" "ly@tty2.service" "cronie.service")
 
 echo "The following systemd units will be enabled and started:"
 for svc in "${SERVICES[@]}"; do
