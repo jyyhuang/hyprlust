@@ -4,6 +4,7 @@ format = """
 $os\
 $directory\
 $git_branch\
+$git_commit\
 $git_status\
 $c\
 $rust\
@@ -60,6 +61,7 @@ truncation_symbol = "…/"
 symbol = ""
 style = "bg:none"
 format = '[[$symbol $branch ](fg:cyan bg:none)]($style)'
+
 
 [git_status]
 style = "bg:none"

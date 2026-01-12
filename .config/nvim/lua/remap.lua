@@ -2,23 +2,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.diagnostic.config({
-	float = {
-		focusable = true,
-		style = "minimal",
-		border = "rounded",
-		header = "",
-		prefix = "",
-	},
-})
-
 --Highlights on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking",
-	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking",
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 -- Undotree
@@ -41,15 +31,15 @@ vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "Preserve paste" })
 --Replace
 vim.keymap.set("n", "<Leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Replace all words" })
 vim.keymap.set(
-	{ "n", "v" },
-	"<Leader>ar",
-	":,$s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-	{ desc = "Replace all words after current line" }
+  { "n", "v" },
+  "<Leader>ar",
+  ":,$s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+  { desc = "Replace all words after current line" }
 )
 
 -- yazi
 vim.keymap.set("n", "-", function()
-	require("yazi").yazi()
+  require("yazi").yazi()
 end, { desc = "Open yazi" })
 
 -- highlight search
@@ -58,12 +48,20 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove highlight" 
 -- Resize windows
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +5<cr>", { desc = "Increase Window Height" })
 vim.keymap.set("n", "<C-Down>", "<cmd>resize -5<cr>", { desc = "Decrease Window Height" })
-vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize -5<cr>", { desc = "Increase Window Width" })
-vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize +5<cr>", { desc = "Decrease Window Width" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -5<cr>", { desc = "Increase Window Width" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +5<cr>", { desc = "Decrease Window Width" })
 
 -- copilot
 vim.keymap.set("i", "<C-Enter>", 'copilot#Accept("\\<CR>")', {
-	expr = true,
-	replace_keycodes = false,
+  expr = true,
+  replace_keycodes = false,
 })
 vim.g.copilot_no_tab_map = true
+
+local isLspDiagnosticsVisible = true
+vim.keymap.set("n", "<leader>lx", function()
+    isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+    vim.diagnostic.config({
+        virtual_text = isLspDiagnosticsVisible,
+        underline = isLspDiagnosticsVisible
+    }) end)

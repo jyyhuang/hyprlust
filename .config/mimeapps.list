@@ -1,6 +1,0 @@
-[Added Associations]
-application/pdf=okular-2.desktop;okular.desktop;
-
-[Default Applications]
-application/pdf=okular-2.desktop;
-x-scheme-handler/discord=vesktop.desktop

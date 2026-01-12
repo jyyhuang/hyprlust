@@ -10,6 +10,7 @@ configuration {
 @import "./colors-rofi.rasi"
 
 window {
+    background-color: #00000099;
     width:                       100%;
     height:                      100%;
     fullscreen: true; 
@@ -18,6 +19,7 @@ window {
 }
 
 mainbox {
+    background-color: transparent;
     children:                    ["inputbar","listview" ];
     spacing:                     24px;
     margin:                      0px;
@@ -26,6 +28,7 @@ mainbox {
 
 listview {
     columns:                     4;
+    background-color: transparent;
     lines:                       3;
     cycle:                       true;
     dynamic:                     true;
@@ -42,6 +45,7 @@ listview {
 
 element {
     cursor:                      pointer;
+    background-color: transparent;
     children: [ element-icon, element-text ];
     border-radius:               36px;
     orientation:                 vertical;
@@ -52,29 +56,47 @@ element {
 
 element-icon {
     expand:                      false;
+    background-color: transparent;
+    text-color: @foreground;
     size:                        24%;
     cursor:                      inherit;
 }
 
 element-text{
   horizontal-align: 0.5;
+  background-color: transparent;
+  text-color: @foreground;
   margin: 10px;
+}
+
+element-text selected.normal{
+  text-color: @background;
+}
+
+element selected.normal{
+  background-color: @foreground;
 }
 
 inputbar {
    spacing: 0px;
    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+   background-color: transparent;
 }
 
 prompt {
    padding:0px 10px;
    border-radius: 20px;
+   background-color: transparent;
+   text-color: @foreground;
 }
 
 entry {
    placeholder: "Search...";
    padding:0px 6px;
    cursor-width: 11px;
+   background-color: transparent;
+   text-color: @foreground;
+   placeholder-color: @alternate-active-background;
 }
 
 case-indicator {
@@ -88,4 +110,6 @@ textbox-prompt-colon {
   str:        "";
   margin:     0px 0.3em 0em 0em ;
   border-radius: 20px;
+  text-color: @foreground;
+  background-color: transparent;
 }

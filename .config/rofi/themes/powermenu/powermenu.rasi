@@ -57,7 +57,7 @@ mainbox {
 
 /*****----- User -----*****/
 userimage {
-    margin:                      0px 380px;
+    margin:                      0px 400px 0px 400px;
     border:                      2px;
     border-radius:               100%;
     background-color:            transparent;

@@ -1,6 +1,7 @@
 @import "./colors-rofi.rasi"
 
 window {
+   background-color: #00000099;
    width: 40%;
    padding: 10px;
    fullscreen: false;
@@ -10,19 +11,24 @@ window {
 
 mainbox {
    spacing:5px;
+   background-color: transparent;
    border-radius: 20px;
 }
 
 message {
+   background-color: transparent;
    padding: 10px 10px;
    border-radius: 20px;
 }
 
 textbox {
+   text-color: @background;
+   background-color: transparent;
    border-radius: 20px;
 }
 
 listview {
+   background-color: transparent;
    fixed-height: true;
    dynamic: false;
    scrollbar: false;
@@ -34,6 +40,7 @@ listview {
 
 element {
   spacing: 5px;
+  background-color: transparent;
   children: [ element-icon, element-text ];
   padding: 4px 10px;
   border-radius: 20px;
@@ -41,55 +48,88 @@ element {
 
 element-icon {
   size: 22px;
+  background-color: transparent;
+  text-color: @foreground;
 }
 
 element-text {
+  background-color: transparent;
+  text-color: @foreground;
   vertical-align: 0.5;
+}
+
+element-text selected.normal{
+  text-color: @background;
 }
 
 element normal.normal {
    padding: 0px 15px;
    border-radius: 20px;
+   background-color: transparent;
+   text-color: @foreground;
+}
+
+element normal.urgent {
+  background-color: transparent;
+  text-color: @urgent-foreground;
 }
 
 element normal.active {
+   background-color: transparent;
+   text-color: @active-foreground;
    border-radius: 20px;
 }
 
 element selected.normal {
     border-radius: 20px;
+    background-color: @foreground;
 }
 
 element selected.urgent {
     border-radius: 20px;
+    background-color: transparent;
+    text-color: transparent;
 }
 
 element selected.active {
     border-radius: 20px;
+    background-color: transparent;
+    text-color: @selected-active-foreground;
 }
 
 element alternate.normal {
     border-radius: 20px;
+    background-color: transparent;
+    text-color: @foreground;
 }
 
 element alternate.urgent {
+    background-color: transparent;
+    text-color: @alternate-urgent-foreground;
     border-radius: 20px;
 }
 
 element alternate.active {
+    background-color: transparent;
+    text-color:       transparent;
     border-radius: 20px;
 }
 
 scrollbar {
+   background-color: transparent;
+   handle-color: transparent;
    handle-width: 0px;
    border-radius: 20px;
 }
 
 mode-switcher {
+   background-color: transparent;
    border-radius: 20px;
 }
 
 button {
+    background-color: transparent;
+    text-color: @foreground;
    border-radius: 20px;
 }
 
@@ -99,6 +139,7 @@ button selected {
 }
 
 inputbar {
+    background-color: transparent;
    spacing: 0px;
    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
    border-radius: 20px;
@@ -107,16 +148,23 @@ inputbar {
 prompt {
    padding:0px 10px;
    border-radius: 20px;
+    background-color: transparent;
+    text-color: @foreground;
 }
 
 entry {
    placeholder: "Search...";
+    background-color: transparent;
+    text-color: @foreground;
+    placeholder-color: @alternate-active-background;
    padding:0px 6px;
    cursor-width: 11px;
 }
 
 case-indicator {
    padding:6px 10px;
+   text-color: transparent;
+   background-color: transparent;
    border-radius: 20px;
 }
 
@@ -126,4 +174,6 @@ textbox-prompt-colon {
   str:        "";
   margin:     0px 0.3em 0em 0em ;
   border-radius: 20px;
+    text-color: @foreground;
+    background-color: transparent;
 }

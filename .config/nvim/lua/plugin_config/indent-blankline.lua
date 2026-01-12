@@ -7,6 +7,7 @@ return {
 			require("ibl").setup({
 				indent = {
 					char = "»",
+					tab_char = "»",
 					highlight = { "Whitespace" },
 				},
 				scope = {

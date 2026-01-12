@@ -61,10 +61,9 @@ return {
 
 			theta.buttons.val = {
 				dashboard.button("e", "  New File", [[<cmd>ene<CR>]]),
-				dashboard.button("SPC s f", "  Find File", [[<cmd>Telescope find_files<CR>]]),
-				dashboard.button("SPC s g", "󰊄  Find Grep", [[<cmd>Telescope live_grep<CR>]]),
+				dashboard.button("SPC f f", "  Find File", [[<cmd>FzfLua files<CR>]]),
+				dashboard.button("SPC f g", "󰊄  Find Grep", [[<cmd>FzfLua live_grep<CR>]]),
 				dashboard.button("u", "  Update Plugins", [[<cmd>Lazy sync<CR>]]),
-				dashboard.button("m", "  Mason", [[<cmd>Mason<CR>]]),
 				dashboard.button("q", "󰈆  Quit", [[<cmd>qa<CR>]]),
 				dashboard.button("c", "  Config", [[<cmd>:e ~/.config/nvim/lua/<CR>]]),
 			}

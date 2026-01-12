@@ -49,6 +49,7 @@ function module.apply_to_config(config)
 			family = "Monocraft",
 			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 			weight = "Regular",
+			scale = 0.9,
 		},
 		{
 			family = "Hack Nerd Font Mono",
@@ -57,11 +58,6 @@ function module.apply_to_config(config)
 	})
 	config.font_size = 15
 	config.use_fancy_tab_bar = false
-
-	config.default_cursor_style = "BlinkingBlock"
-	config.cursor_blink_ease_in = "Constant"
-	config.cursor_blink_ease_out = "Constant"
-	config.cursor_blink_rate = 750
 
 	config.force_reverse_video_cursor = true
 

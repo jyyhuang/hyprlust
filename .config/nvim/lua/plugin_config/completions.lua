@@ -1,26 +1,7 @@
 return {
 	{
-		"github/copilot.vim",
-		cmd = "Copilot",
-		event = "BufWinEnter",
-		init = function()
-			vim.g.copilot_no_maps = true
-		end,
-		config = function()
-			-- Block the normal Copilot suggestions
-			vim.api.nvim_create_augroup("github_copilot", { clear = true })
-			vim.api.nvim_create_autocmd({ "FileType", "BufUnload" }, {
-				group = "github_copilot",
-				callback = function(args)
-					vim.fn["copilot#On" .. args.event]()
-				end,
-			})
-			vim.fn["copilot#OnFileType"]()
-		end,
-	},
-	{
 		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
+		dependencies = { "rafamadriz/friendly-snippets" },
 
 		version = "1.*",
 
@@ -46,33 +27,28 @@ return {
 			},
 
 			completion = {
-				list = { selection = { preselect = true, auto_insert = false } },
+				list = { selection = { preselect = false, auto_insert = true } },
+				documentation = { auto_show = true, auto_show_delay_ms = 0 },
 				menu = {
-					border = "rounded",
 					draw = {
 						columns = {
+							{ "kind_icon" },
 							{ "label", "label_description" },
-							{ "kind_icon", gap = 1, "kind" },
+							{ "kind" },
+						},
+						treesitter = {
+							"lsp",
 						},
 					},
 				},
-				documentation = { auto_show = true, auto_show_delay_ms = 0, window = { border = "rounded" } },
 			},
 
 			sources = {
-				default = { "lsp", "path", "copilot", "snippets", "buffer" },
-				providers = {
-					copilot = {
-						name = "copilot",
-						module = "blink-copilot",
-						score_offset = 100,
-						async = true,
-					},
-				},
+				default = { "lsp", "path", "snippets", "buffer" },
 			},
 
 			fuzzy = { implementation = "prefer_rust_with_warning" },
-			signature = { enabled = true, window = { border = "rounded" } },
+			signature = { enabled = true },
 		},
 		opts_extend = { "sources.default" },
 	},
