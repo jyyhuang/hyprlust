@@ -1,5 +1,4 @@
 /******************** BEGIN PYWALFOX CUSTOM CSS ********************/
-/* Hide page scrollbars */
 @-moz-document url(about:blank), url(about:newtab), url(about:home) {
   body {
     --pywalfox-font-size: 1rem;

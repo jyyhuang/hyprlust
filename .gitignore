@@ -12,6 +12,7 @@ kde.org/
 session/
 dconf/
 gtk-3.0/
+gtk-4.0/
 Kvantum/
 pulse/
 qt5ct/
@@ -21,3 +22,5 @@ dolphinrc
 pavucontrol.ini
 chromium/
 opencode/
+go/
+nextjs-nodejs/

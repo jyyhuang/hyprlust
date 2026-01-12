@@ -48,6 +48,7 @@ alias ls='ls --color=auto'
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
 export MANROFFOPT="-P -c"
 
+export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:down,shift-tab:up"
 source <(fzf --zsh)
 
 bindkey '^I' autosuggest-accept
@@ -63,5 +64,10 @@ export ZSH_AUTOSUGGEST_STRATEGY=(
 
 export EDITOR="nvim"
 export VISUAL="$EDITOR"
+export BAT_THEME="base16"
 eval "$(zoxide init --cmd cd zsh)"
+if [[ -z "${SSH_CONNECTION}" ]]; then
+    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
 eval "$(starship init zsh)"
