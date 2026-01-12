@@ -1,6 +1,7 @@
 return {
 	{
 		"goolord/alpha-nvim",
+    cmd = "Alpha",
 		dependencies = {
 			"nvim-mini/mini.icons",
 			"nvim-lua/plenary.nvim",
