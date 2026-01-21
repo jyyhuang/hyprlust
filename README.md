@@ -8,7 +8,7 @@
 
 <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png">
 
-This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprland) setup, featuring dynamic color schemes powered by [Wallust](https://codeberg.org/explosion-mental/wallust). The included script automates the installation of packages and sets up Paru for package management. Updates to packages will be infrequent and typically only occur if something breaks.
+This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprland) setup, featuring dynamic color schemes powered by [Wallust](https://codeberg.org/explosion-mental/wallust). The included script only automates the installation of packages and sets up Paru for package management. You may need to move files and enable some services manually.
 
 Oh, and it's Arch BTW... just kidding (unless).
 
@@ -22,10 +22,11 @@ Oh, and it's Arch BTW... just kidding (unless).
 - **Terminal**: [wezterm](https://github.com/wez/wezterm)
 - **Colorscheme**: [wallust](https://codeberg.org/explosion-mental/wallust)
 - **Bar**: [waybar](https://github.com/Alexays/Waybar)
-- **Notifications**: [swaync](https://github.com/ErikReider/SwayNotificationCenter)
 - **Launcher/Powermenu/Wallpaper**: [rofi](https://github.com/lbonn/rofi)
-- **SDDM Theme**: [where is my sddm theme?](https://github.com/stepanzubkov/where-is-my-sddm-theme)
 - **Browser**: Firefox
+
+## Future Plans
+I want to eventually port my components to [quickshell](https://quickshell.org/) and will be working on that for the time being.
 
 ## 📸 Gallery
 
