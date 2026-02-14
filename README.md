@@ -32,7 +32,7 @@ I want to eventually port my components to [quickshell](https://quickshell.org/)
 
 ![lain](screenshots/lain.png)
 ![terminal](screenshots/terminal.png)
-![rofi_sway_sc](screenshots/rofi_sway_sc.png)
+![rofi](screenshots/rofi.png)
 ![firefox](screenshots/firefox.png)
 ![btop](screenshots/btop.png)
 ![wallpapers](screenshots/wallpapers.png)
