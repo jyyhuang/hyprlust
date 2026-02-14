@@ -1,9 +1,6 @@
 opencode-bin
-paru
-paru-debug
 pokeget
 python-pywalfox
-turbo-base64
 vesktop
 wallust-git
 wezterm-git
