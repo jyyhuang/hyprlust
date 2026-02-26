@@ -8,15 +8,17 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "isort" },
-					javascript = { "prettier" },
-					tyepescript = { "prettier" },
-					javascriptreact = { "prettier" },
-					typescriptreact = { "prettier" },
-					css = { "prettier" },
-					html = { "prettier" },
-					json = { "prettier" },
-					yaml = { "prettier" },
-					markdown = { "prettier" },
+					javascript = { "prettierd" },
+					tyepescript = { "prettierd" },
+					javascriptreact = { "prettierd" },
+					typescriptreact = { "prettierd" },
+					css = { "prettierd" },
+					html = { "prettierd" },
+					json = { "prettierd" },
+					yaml = { "prettierd" },
+					markdown = { "prettierd" },
+          cpp = {"clang-format"},
+          c = {"clang-format"}
 				},
 			})
 

@@ -22,7 +22,7 @@
     horizontal_padding = 8
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#509FA5"
+    frame_color = "#424752"
     gap_size = 3
     separator_color = frame
     sort = yes
@@ -44,17 +44,17 @@
     layer = top
 
 [urgency_low]
-    background = "#3D3E4355"
-    foreground = "#ADE1E555"
+    background = "#39484955"
+    foreground = "#7E838D55"
     timeout = 3
 
 [urgency_normal]
-    background = "#3D3E4355"
-    foreground = "#ADE1E5"
+    background = "#39484955"
+    foreground = "#7E838D"
     timeout = 5
 
 [urgency_critical]
-    background = "#3D3E4355"
-    foreground = "#ADE1E5"
+    background = "#39484955"
+    foreground = "#7E838D"
     frame_color = "#ff0000"
     timeout = 15

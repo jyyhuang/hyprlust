@@ -6,7 +6,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local servers = { "lua_ls", "basedpyright" }
+			local servers = { "lua_ls", "basedpyright", "ts_ls", "clangd" }
 			vim.lsp.enable(servers)
 
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
