@@ -8,6 +8,9 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "isort" },
+					cpp = { "clang-format" },
+					c = { "clang-format" },
+					rust = { "rustfmt" },
 					javascript = { "prettierd" },
 					tyepescript = { "prettierd" },
 					javascriptreact = { "prettierd" },
@@ -17,8 +20,6 @@ return {
 					json = { "prettierd" },
 					yaml = { "prettierd" },
 					markdown = { "prettierd" },
-          cpp = {"clang-format"},
-          c = {"clang-format"}
 				},
 			})
 

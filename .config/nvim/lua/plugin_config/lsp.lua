@@ -1,13 +1,29 @@
 return {
 	{
-		"mason-org/mason.nvim",
-		opts = {},
-	},
-	{
-		"neovim/nvim-lspconfig",
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+			"neovim/nvim-lspconfig",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+		},
 		config = function()
-			local servers = { "lua_ls", "basedpyright", "ts_ls", "clangd" }
-			vim.lsp.enable(servers)
+			require("mason-lspconfig").setup({})
+			require("mason-tool-installer").setup({
+				ensure_installed = {
+          -- LSP
+					"basedpyright",
+					"ts_ls",
+					"rust-analyzer",
+					"lua_ls",
+					"clangd",
+
+          -- Others
+					"clang-format",
+					"isort",
+					"prettierd",
+					"stylua",
+				},
+			})
 
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
