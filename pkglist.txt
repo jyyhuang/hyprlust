@@ -70,6 +70,7 @@ pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+poppler
 python-pip
 qt5-wayland
 qt5ct
@@ -80,6 +81,7 @@ reflector
 resvg
 rofi
 rsync
+rustup
 slurp
 smartmontools
 sof-firmware
