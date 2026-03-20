@@ -11,17 +11,17 @@ return {
 			require("mason-tool-installer").setup({
 				ensure_installed = {
           -- LSP
-					"basedpyright",
+					"pylsp",
 					"ts_ls",
 					"rust-analyzer",
 					"lua_ls",
 					"clangd",
 
           -- Others
-					"clang-format",
-					"isort",
-					"prettierd",
+					"black",
+					"prettier",
 					"stylua",
+          "clang-format"
 				},
 			})
 

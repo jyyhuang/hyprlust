@@ -141,8 +141,7 @@ function module.apply_to_config(config)
 	end)
 
 	config.inactive_pane_hsb = {
-		saturation = 0.7,
-		brightness = 0.5,
+		brightness = 0.4,
 	}
 end
 

@@ -5,11 +5,16 @@
 (cat ~/.cache/wallust/sequences &)
 
 pokeget piplup --hide-name
-echo
 
 # Paths
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 
+# Add default node to path
+export PATH=~/.nvm/versions/node/v12.16.1/bin:$PATH
+
+# Load NVM
+export NVM_DIR=~/.nvm
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile

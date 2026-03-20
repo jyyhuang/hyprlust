@@ -2,12 +2,7 @@ return {
 	{
 		"ibhagwan/fzf-lua",
 		-- optional for icon support
-
-		keys = {
-			{ "<leader>ff" },
-			{ "<leader>fg" },
-		},
-
+    event = "VeryLazy",
 		dependencies = { "nvim-mini/mini.icons" },
 		config = function()
 			local fzf_lua = require("fzf-lua")
