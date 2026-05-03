@@ -1,6 +1,7 @@
 7zip
 adw-gtk-theme
 amd-ucode
+awww
 base
 base-devel
 bat
@@ -62,6 +63,7 @@ ntp
 nvidia-open-dkms
 nvm
 nwg-look
+obs-studio
 opencode
 openssh
 os-prober
@@ -89,10 +91,10 @@ sof-firmware
 spotify-launcher
 starship
 sudo
-swww
 tk
 trash-cli
 tree-sitter-cli
+ttf-fira-sans
 ufw
 unzip
 uv

@@ -45,7 +45,7 @@ echo "Selected wallpaper: $SELECTED_FILENAME"
 # If a wallpaper was selected, set it as the wallpaper using swww
 if [ -n "$SELECTED_FILENAME" ]; then
     FULL_PATH="$WALLPAPER_DIR/$SELECTED_FILENAME"
-    swww img "$FULL_PATH" $SWWW_OPTIONS && wallust run $FULL_PATH && dunstctl reload && pywalfox update
+    awww img "$FULL_PATH" $SWWW_OPTIONS && wallust run $FULL_PATH && dunstctl reload && pywalfox update
 else
     echo "No wallpaper selected."
 fi

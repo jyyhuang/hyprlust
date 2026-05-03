@@ -10,18 +10,18 @@ return {
 			require("mason-lspconfig").setup({})
 			require("mason-tool-installer").setup({
 				ensure_installed = {
-          -- LSP
+					-- LSP
 					"pylsp",
 					"ts_ls",
 					"rust-analyzer",
 					"lua_ls",
 					"clangd",
 
-          -- Others
+					-- Others
 					"black",
 					"prettier",
 					"stylua",
-          "clang-format"
+					"clang-format",
 				},
 			})
 
