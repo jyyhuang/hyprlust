@@ -11,10 +11,12 @@ simple-update-notifier/
 spotify/
 vesktop/
 xsettingsd/
+create-next-app-nodejs/
+obs-studio/
+
 kritadisplayrc
 kritarc
 mimeapps.list
-nohup.out
 pavucontrol.ini
 QtProject.conf
 user-dirs.dirs

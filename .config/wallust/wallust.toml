@@ -85,3 +85,4 @@ firefox = {src= 'colors.json', dst = '~/.cache/wal/colors.json'}
 dunst = {src='colors-dunstrc', dst= '~/.config/dunst/dunstrc'}
 gtk3 = {src='colors-gtk.css', dst='~/.config/gtk-3.0/gtk.css'}
 gtk4 = {src='colors-gtk.css', dst='~/.config/gtk-4.0/gtk.css'}
+quickshell = {src='colors-quickshell.qml', dst='~/.config/quickshell/utils/Colors.qml'}
