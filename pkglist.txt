@@ -35,7 +35,6 @@ hyprshot
 imagemagick
 inotify-tools
 jq
-jupyter-notebook
 kitty
 krita
 layer-shell-qt

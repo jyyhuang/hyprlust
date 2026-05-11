@@ -4,8 +4,6 @@
 # Not supported in the "fish" shell.
 (cat ~/.cache/wallust/sequences &)
 
-pokeget piplup --hide-name
-
 # Paths
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
 
