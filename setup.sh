@@ -32,13 +32,6 @@ if [[ ! -f "$PKG_LIST" || ! -f "$AUR_LIST" ]]; then
   exit 1
 fi
 
-# Install Pacman packages
-# pacman -Qqen > pkglist.txt
-if ask_confirmation "Do you want to install Pacman packages?"; then
-  echo "Updating system and installing official packages..."
-  sudo pacman -Syu --needed - < "$PKG_LIST"
-fi
-
 # Install AUR helper (paru) if not installed
 if ! command -v paru &>/dev/null; then
   if ask_confirmation "paru not found. Do you want to install paru?"; then
@@ -53,6 +46,13 @@ if ! command -v paru &>/dev/null; then
     popd > /dev/null
     rm -rf "$TEMP_DIR"
   fi
+fi
+
+# Install Pacman packages
+# pacman -Qqen > pkglist.txt
+if ask_confirmation "Do you want to install Pacman packages?"; then
+  echo "Updating system and installing official packages..."
+  sudo pacman -Syu --needed - < "$PKG_LIST"
 fi
 
 # Install AUR packages
@@ -85,7 +85,7 @@ if ask_confirmation "Do you want to sync config files and wallpapers?"; then
 fi
 
 # Enable and start services
-SERVICES=("NetworkManager.service" "ufw.service" "reflector.timer")
+SERVICES=("ufw.service" "reflector.timer", "docker.socket")
 
 if ask_confirmation "Do you want to enable/start services (${SERVICES[*]})?"; then
   for svc in "${SERVICES[@]}"; do
@@ -102,7 +102,7 @@ if [[ "$SHELL" != */zsh ]]; then
   if command -v zsh &>/dev/null; then
     if ask_confirmation "Would you like to change your default shell to ZSH?"; then
       echo "Changing shell to zsh..."
-      chsh -s "$(which zsh)"
+      chsh -s /usr/bin/zsh
       echo "Shell changed. You may need to log out and back in for this to take effect."
     fi
   else

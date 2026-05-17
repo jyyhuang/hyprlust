@@ -1,4 +1,6 @@
+paru
+paru-debug
 python-pywalfox
 vesktop
-wallust-git
+wallust
 wezterm-git
