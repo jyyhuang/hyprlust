@@ -85,17 +85,13 @@ if ask_confirmation "Do you want to sync config files and wallpapers?"; then
 fi
 
 # Enable and start services
-SERVICES=("ufw.service" "reflector.timer", "docker.socket")
+SERVICES=("ufw.service" "reflector.service" "docker.socket")
 
 if ask_confirmation "Do you want to enable/start services (${SERVICES[*]})?"; then
   for svc in "${SERVICES[@]}"; do
     echo "Setting up $svc..."
     sudo systemctl enable --now "$svc"
   done
-
-  sudo ufw default deny incoming
-  sudo ufw default allow outgoing
-  sudo ufw --force enable
 fi
 
 if [[ "$SHELL" != */zsh ]]; then
