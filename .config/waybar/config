@@ -10,6 +10,7 @@
     "memory",
     "cpu",
     "pulseaudio",
+    "bluetooth",
     "network",
     "battery",
     "clock",
@@ -19,16 +20,16 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "十"
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
     },
     "persistent-workspaces":{
       "*": 5
@@ -81,6 +82,8 @@
 
   "pulseaudio": {
     "format": "{icon}{volume}%",
+    "format-bluetooth": "{icon}{volume}%",
+    "format-bluetooth-muted": " ",
     "format-muted": " ",
     "format-source": " {volume}%",
     "format-source-muted": "",
@@ -117,6 +120,18 @@
     "separate-outputs": true,
     "icon": true,
     "max-length": 25
+  },
+
+  "bluetooth": {
+      "format": " {status}",
+      "format-disabled": " {status}",
+      "format-connected": "{num_connections} connected",
+      "tooltip-format": "{controller_alias}\t{controller_address}",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "format-alt-click": "click-right",
+      "on-click": "blueman-manager",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+
   },
 
   "memory": {

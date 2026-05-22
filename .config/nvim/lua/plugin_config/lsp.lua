@@ -24,6 +24,10 @@ return {
 					"clang-format",
 				},
 			})
+			vim.lsp.enable("qmlls")
+			vim.lsp.config("qmlls", {
+				cmd = { "qmlls6" },
+			})
 
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" })

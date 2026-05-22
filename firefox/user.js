@@ -262,3 +262,9 @@ user_pref("mousewheel.default.delta_multiplier_y", 300); // 250-400; adjust this
 /****************************************************************************
  * END: BETTERFOX                                                           *
 ****************************************************************************/
+
+// Fill SVG Color
+user_pref("svg.context-properties.content.enabled", true);
+
+// CSS's `:has()` selector 
+user_pref("layout.css.has-selector.enabled", true);

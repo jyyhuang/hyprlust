@@ -5,6 +5,8 @@ awww
 base
 base-devel
 bat
+bluez
+bluez-utils
 brightnessctl
 btop
 bun
