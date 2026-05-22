@@ -1,4 +1,4 @@
-<h1 align="center">💖 Hyprlust </h1>
+<h1 align="center">💖 Hyprlust 💖</h1>
 
 <div align="center">
 <img src="https://i.imgur.com/MXapNzU.png" height="auto" width="175"></img>
@@ -15,7 +15,7 @@ Oh, and it's Arch BTW... jk (unless).
 > [!WARNING]
 > These are my personal dot files and may not work for everyone. Packages may not be up to date, use at your own risk.
 
-## 📝 Details
+## Details
 
 - **OS**: Arch Linux
 - **Compositor**: [hyprland](https://github.com/hyprwm/Hyprland)
@@ -23,12 +23,12 @@ Oh, and it's Arch BTW... jk (unless).
 - **Colorscheme**: [wallust](https://codeberg.org/explosion-mental/wallust)
 - **Bar**: [waybar](https://github.com/Alexays/Waybar)
 - **Launcher/Powermenu/Wallpaper**: [rofi](https://github.com/lbonn/rofi)
-- **Browser**: Firefox
+- **Browser**: Firefox [(textfox)](https://github.com/adriankarlen/textfox)
 
 ## Future Plans
 I want to eventually port my components to [quickshell](https://quickshell.org/) and will be working on that for the time being.
 
-## 📸 Gallery
+## Gallery
 
 ![lain](screenshots/lain.png)
 ![terminal](screenshots/terminal.png)
