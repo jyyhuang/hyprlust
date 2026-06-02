@@ -1,28 +1,47 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		lazy = false,
+		branch = "main",
 		build = ":TSUpdate",
-	},
-	{
-		"MeanderingProgrammer/treesitter-modules.nvim",
 		config = function()
-			require("treesitter-modules").setup({
-				auto_install = true,
-				highlight = {
-					enable = true,
-				},
-				additional_vim_regex_highlighting = false,
+			local languages = {
+				--languages
+				"rust",
+				"typescript",
+				"javascript",
+				"tsx",
+				"html",
+				"css",
+				"json",
+				"bash",
+				"python",
 
-				incremental_selection = {
-					enable = true,
-					keymaps = {
-						init_selection = "<Leader>ss",
-						node_incremental = "<Leader>sd",
-						scope_incremental = "<Leader>sw",
-						node_decremental = "<Leader>sa",
-					},
-				},
+				--extras
+				"dockerfile",
+			}
+			require("nvim-treesitter").install(languages)
+
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "*",
+				callback = function(args)
+					local buf = args.buf
+					local filetype = vim.bo[buf].filetype
+
+					local language = vim.treesitter.language.get_lang(filetype)
+					if not language then
+						return
+					end
+
+					local ok_add = pcall(vim.treesitter.language.add, language)
+
+					if not ok_add then
+						return
+					end
+
+					vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+					pcall(vim.treesitter.start, buf, language)
+				end,
 			})
 		end,
 	},

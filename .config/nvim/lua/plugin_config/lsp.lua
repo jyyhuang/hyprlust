@@ -24,6 +24,13 @@ return {
 					"clang-format",
 				},
 			})
+			vim.lsp.config("lua_ls", {
+				settings = {
+					Lua = {
+						diagnostics = { globals = { "vim" } },
+					},
+				},
+			})
 			vim.lsp.enable("qmlls")
 			vim.lsp.config("qmlls", {
 				cmd = { "qmlls6" },

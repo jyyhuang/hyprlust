@@ -8,11 +8,13 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
+		"rafamadriz/friendly-snippets",
 		"onsails/lspkind.nvim",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
 			preselect = cmp.PreselectMode.None,
@@ -82,7 +84,8 @@ return {
 			matching = { disallow_symbol_nonprefix_matching = false },
 		})
 
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 		vim.lsp.config("*", {
 			capabilities = capabilities,
 		})

@@ -4,20 +4,20 @@ vim.g.maplocalleader = " "
 
 --Highlights on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking",
-  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	desc = "Highlight when yanking",
+	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
-
--- Undotree
-vim.keymap.set("n", "<Leader>ut", vim.cmd.UndotreeToggle, { desc = "Toggle UndoTree" })
 
 -- Move
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move 1 line down (visual mode)" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move 1 line up (visual mode)" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Move next line to end of current line (normal mode)" })
+
+vim.keymap.set("v", "<", "<gv", { desc = "Unindent and keep selection" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
 
 -- Panel Movement
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { silent = true, desc = "Switch to left panel" })
@@ -26,21 +26,22 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { silent = true, desc = "Switch to to
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { silent = true, desc = "Switch to right panel" })
 
 -- Paste preserve
-vim.keymap.set("x", "<Leader>p", '"_dP', { desc = "Preserve paste" })
+vim.keymap.set("x", "p", '"_dP', { desc = "Preserve paste" })
 
 --Replace
 vim.keymap.set("n", "<Leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = "Replace all words" })
 vim.keymap.set(
-  { "n", "v" },
-  "<Leader>ar",
-  ":,$s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-  { desc = "Replace all words after current line" }
+	{ "n", "v" },
+	"<Leader>ar",
+	":,$s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+	{ desc = "Replace all words after current line" }
 )
 
--- yazi
-vim.keymap.set("n", "-", function()
-  require("yazi").yazi()
-end, { desc = "Open yazi" })
+-- Native undotree
+vim.keymap.set("n", "<Leader>ut", function()
+	vim.cmd.packadd("nvim.undotree")
+	require("undotree").open()
+end, { desc = "Toggle Builtin UndoTree" })
 
 -- highlight search
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove highlight" })
@@ -51,17 +52,11 @@ vim.keymap.set("n", "<C-Down>", "<cmd>resize -5<cr>", { desc = "Decrease Window 
 vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -5<cr>", { desc = "Increase Window Width" })
 vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +5<cr>", { desc = "Decrease Window Width" })
 
--- copilot
-vim.keymap.set("i", "<C-Enter>", 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false,
-})
-vim.g.copilot_no_tab_map = true
-
 local isLspDiagnosticsVisible = true
 vim.keymap.set("n", "<leader>lx", function()
-    isLspDiagnosticsVisible = not isLspDiagnosticsVisible
-    vim.diagnostic.config({
-        virtual_text = isLspDiagnosticsVisible,
-        underline = isLspDiagnosticsVisible
-    }) end)
+	isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+	vim.diagnostic.config({
+		virtual_text = isLspDiagnosticsVisible,
+		underline = isLspDiagnosticsVisible,
+	})
+end)

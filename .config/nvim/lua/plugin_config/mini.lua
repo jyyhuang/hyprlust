@@ -1,44 +1,12 @@
 return {
 	{
-		"nvim-mini/mini.surround",
+		"nvim-mini/mini.nvim",
 		version = false,
-		opts = {
-
-			custom_surroundings = nil,
-
-			highlight_duration = 500,
-
-			-- saiw add around
-			mappings = {
-				add = "sa", -- Add surrounding in Normal and Visual modes
-				delete = "sd", -- Delete surrounding
-				find = "", -- Find surrounding (to the right)
-				find_left = "", -- Find surrounding (to the left)
-				highlight = "", -- Highlight surrounding
-				replace = "sr", -- Replace surrounding
-
-				suffix_last = "", -- Suffix to search with "prev" method
-				suffix_next = "", -- Suffix to search with "next" method
-			},
-
-			n_lines = 20,
-
-			respect_selection_type = false,
-
-			search_method = "cover",
-
-			silent = false,
-		},
-	},
-	{
-		"nvim-mini/mini.icons",
 		config = function()
+			require("mini.surround").setup({})
+
 			require("mini.icons").setup()
-		end,
-	},
-	{
-		"nvim-mini/mini.hipatterns",
-		config = function()
+
 			local hipatterns = require("mini.hipatterns")
 			hipatterns.setup({
 				highlighters = {
@@ -52,13 +20,16 @@ return {
 					hex_color = hipatterns.gen_highlighter.hex_color(),
 				},
 			})
-		end,
-	},
-	{
-		"nvim-mini/mini.ai",
 
-		config = function()
 			require("mini.ai").setup()
-		end,
+
+			require("mini.notify").setup({
+				content = {
+					format = function(notif)
+						return notif.msg
+					end,
+				},
+			})
+        end
 	},
 }
