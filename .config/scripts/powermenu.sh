@@ -56,9 +56,9 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			systemctl poweroff
+            hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'
 		elif [[ $1 == '--reboot' ]]; then
-			systemctl reboot
+			hyprshutdown -t 'Restarting...' --post-cmd reboot
 		elif [[ $1 == '--suspend' ]]; then
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then

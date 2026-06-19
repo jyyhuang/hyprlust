@@ -33,7 +33,9 @@ hyprland-protocols
 hyprlock
 hyprpicker
 hyprpolkitagent
+hyprpwcenter
 hyprshot
+hyprshutdown
 imagemagick
 inotify-tools
 jq
@@ -69,7 +71,6 @@ opencode
 openssh
 os-prober
 pacman-contrib
-pavucontrol
 pipewire
 pipewire-alsa
 pipewire-jack

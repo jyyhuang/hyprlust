@@ -22,14 +22,6 @@ return {
 			})
 
 			require("mini.ai").setup()
-
-			require("mini.notify").setup({
-				content = {
-					format = function(notif)
-						return notif.msg
-					end,
-				},
-			})
         end
 	},
 }
