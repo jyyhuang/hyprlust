@@ -14,8 +14,10 @@ function module.apply_to_config(config)
 		f:close()
 		return parse_json(body)
 	end
+
 	local wallust_colors_path = os.getenv("HOME") .. "/.config/wezterm/colors.json"
 	local success, wallust_colors = pcall(read_json, wallust_colors_path)
+
 	if not success then
 		wezterm.log_error("Failed to load colors.json: " .. wallust_colors)
 		return
@@ -29,37 +31,31 @@ function module.apply_to_config(config)
 		return string.format("rgba(%s,%s,%s,%s)", r, g, b, alpha)
 	end
 
-	config.automatically_reload_config = true
 	wezterm.add_to_config_reload_watch_list(wallust_colors_path)
 
 	config.window_close_confirmation = "AlwaysPrompt"
 	config.window_decorations = "NONE"
-
+    config.front_end = "WebGpu"
 	config.tab_max_width = 30
-	config.scrollback_lines = 3000
-	config.front_end = "OpenGL"
-	config.adjust_window_size_when_changing_font_size = false
 	config.max_fps = 120
 	config.animation_fps = 120
+	config.font_size = 14
+	config.use_fancy_tab_bar = false
+	config.force_reverse_video_cursor = true
+	config.inactive_pane_hsb = {
+		brightness = 0.4,
+	}
 
 	local opacity = 0.80
 	config.window_background_opacity = opacity
+
 	config.font = wezterm.font_with_fallback({
 		{
 			family = "Monocraft",
 			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 			weight = "Regular",
-			scale = 0.9,
-		},
-		{
-			family = "Hack Nerd Font Mono",
-			scale = 1.3,
 		},
 	})
-	config.font_size = 15
-	config.use_fancy_tab_bar = false
-
-	config.force_reverse_video_cursor = true
 
 	config.colors = {
 		split = wallust_colors.colors.color1,
@@ -139,10 +135,6 @@ function module.apply_to_config(config)
 			{ Text = " " .. title .. " " },
 		}
 	end)
-
-	config.inactive_pane_hsb = {
-		brightness = 0.4,
-	}
 end
 
 return module
