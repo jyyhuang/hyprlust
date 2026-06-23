@@ -1,76 +1,103 @@
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-# Not supported in the "fish" shell.
+# colorscheme
 (cat ~/.cache/wallust/sequences &)
 
-# Paths
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/go/bin:$PATH"
-
-# Add default node to path
-export PATH=~/.nvm/versions/node/v12.16.1/bin:$PATH
-
-# Load NVM
-export NVM_DIR=~/.nvm
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
-
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-
-autoload -Uz compinit promptinit
-compinit
-promptinit
-
-bindkey -v
-
+# plugins
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-unsetopt beep
 
-function z() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
+# load modules
+autoload -Uz compinit && compinit -d "$XDG_CACHE_HOME/zcompdump"
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
 
+# cmp opts
+zstyle ':completion:*' menu select # tab opens cmp menu
+zstyle ':completion:*' special-dirs true # force . and .. to show
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # colorize
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # case insensitive
+
+# variables
+typeset -U path PATH
+path=(
+    "$XDG_CONFIG_HOME/scripts"
+    "$HOME/.local/bin"
+    $path
+)
+
+export NVM_DIR="$HOME/.nvm"
+export LESS='-R --use-color -Dd+r$Du+b$'
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export BAT_THEME="base16"
+
+export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:down,shift-tab:up --border --preview='bat -p --color=always {}'"
+export FZF_CTRL_R_OPTS="--style minimal --info inline --bind=tab:down,shift-tab:up --border --no-sort --no-preview"
+
+# history opts
+HISTFILE="$XDG_CACHE_HOME/.zsh_history"
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
+
+# opts
+setopt append_history share_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+
+setopt menu_complete # autocmp first menu match
+setopt autocd # type a dir to cd
+setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
+setopt globdots # include dotfiles
+setopt extended_glob
+setopt interactive_comments # allow comments in shell
+unsetopt prompt_sp
+setopt noclobber
+setopt nobeep
+
+# alias
 alias v="nvim"
 alias ll="ls -la"
 alias cat="bat"
-
-#Colors
+alias ls='ls --color=auto'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias ip='ip -color=auto'
-export LESS='-R --use-color -Dd+r$Du+b$'
-alias ls='ls --color=auto'
-export MANPAGER="less -R --use-color -Dd+r -Du+b"
-export MANROFFOPT="-P -c"
+alias ip='ip -c=auto'
 
-export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:down,shift-tab:up"
+# binds
+# bind Ctrl+F to fzf file, open in nvim, and cd to directory
+function _fzf_open_nvim() {
+    local file
+    file=$(find . -type f | fzf --no-preview) || return
+
+    local dir=${file:h}
+
+    nvim "$file"
+
+    if [[ -d "$dir" ]]; then
+        cd "$dir"
+        zle reset-prompt
+    fi
+}
+zle -N _fzf_open_nvim
+bindkey '^F' _fzf_open_nvim
+
+# yazi wrapper
+function z() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	command rm -f -- "$tmp"
+}
+
+# up or down in history with search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+
+# setup programs
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use
 source <(fzf --zsh)
-
-bindkey '^I' autosuggest-accept
-
-# Bind Ctrl+F to the desired command
-# Bind Ctrl+F (represented as "^F") to call the fzf_open function
-bindkey -s '^F' 'file=$(find . | fzf --preview "bat --style=numbers --color=always {}") && nvim "$file" && cd $(dirname "$file")\n'
-
-export ZSH_AUTOSUGGEST_STRATEGY=(
-    history
-    completion
-)
-
-export EDITOR="nvim"
-export VISUAL="$EDITOR"
-export BAT_THEME="base16"
 eval "$(zoxide init --cmd cd zsh)"
-if [[ -z "${SSH_CONNECTION}" ]]; then
-    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-fi
-
 eval "$(starship init zsh)"
