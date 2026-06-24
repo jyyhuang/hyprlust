@@ -47,7 +47,6 @@ setopt hist_find_no_dups
 setopt menu_complete # autocmp first menu match
 setopt autocd # type a dir to cd
 setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
-setopt globdots # include dotfiles
 setopt extended_glob
 setopt interactive_comments # allow comments in shell
 unsetopt prompt_sp
