@@ -7,14 +7,10 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-
 					python = { "black" },
-
 					cpp = { "clang-format" },
 					c = { "clang-format" },
-
 					rust = { "rustfmt" },
-
 					javascript = { "prettier" },
 					tyepescript = { "prettier" },
 					javascriptreact = { "prettier" },
@@ -24,6 +20,7 @@ return {
 					json = { "prettier" },
 					yaml = { "prettier" },
 					markdown = { "prettier" },
+                    sh = {"shfmt"}
 				},
 			})
 
