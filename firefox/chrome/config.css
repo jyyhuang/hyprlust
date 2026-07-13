@@ -1,11 +1,30 @@
 :root {
-  --tf-font-family: "Fira Sans", Consolas, monospace; /* Font family of config */
+  --tf-font-family:
+    "Fira Sans", Consolas, monospace; /* Font family of config */
   --tf-font-size: 14px; /* Font size of config */
   --tf-rounding: 4px; /* Border radius used through out the config */
   --tf-display-horizontal-tabs: block; /* If horizontal tabs should be shown, none = hidden, block = shown */
   --tf-display-nav-buttons: flex; /* If the navigation buttons (back, forward) should be shown, none = hidden, flex = shown */
 }
 
-#TabsToolbar::before {
-  margin: -.75rem .75rem !important;
+:root {
+  --tf-navbar-padding: 1px;
+  --tf-toolbar-padding: 1px;
 }
+
+#TabsToolbar::before {
+  margin: -0.75rem 0.75rem !important;
+}
+
+.tabbrowser-tab {
+  --tab-min-height: 20px !important;
+}
+
+#PersonalToolbar {
+  padding: var(--tf-toolbar-padding) !important;
+}
+
+#nav-bar {
+  padding: var(--tf-navbar-padding) !important;
+}
+
