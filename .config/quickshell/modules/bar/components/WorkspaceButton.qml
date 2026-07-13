@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell.Hyprland
-import "../../../utils"
+
+import qs.modules.common
 
 Item {
     property int workspaceId
@@ -14,15 +15,15 @@ Item {
     Rectangle {
         anchors.fill: parent
         radius: 14
-        color: isActive ? Colors.color5 : "transparent"
+        color: isActive ? Config.colors.color5 : "transparent"
     }
 
     Text {
         anchors.centerIn: parent
         text: workspaceId
-        color: isActive || isFocused ? Colors.background : Colors.color14
-        font.pixelSize: 16
-        font.family: Colors.fontFamily
+        color: isActive || isFocused ? Config.colors.background : Config.colors.color14
+        font.pixelSize: Config.font.fontSize
+        font.family: Config.font.fontFamily
     }
 
     MouseArea {

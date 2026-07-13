@@ -1,7 +1,9 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+
 import "../../../utils"
+import qs.modules.common
 
 Item {
     id: power
@@ -15,16 +17,16 @@ Item {
         id: powerText
         anchors.centerIn: parent
         text: "󰐥"
-        color: Colors.color14
-        font.pixelSize: 16
-        font.family: Colors.fontFamily
+        color: Config.colors.color14
+        font.pixelSize: Config.font.fontSize
+        font.family: Config.font.fontFamily
     }
 
     MouseArea {
         anchors.fill: parent
         cursorShape: Qt.OpenHandCursor
         onClicked: {
-            power.menuOpen = !power.menuOpen
+            power.menuOpen = !power.menuOpen;
         }
     }
 

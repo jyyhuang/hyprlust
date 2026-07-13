@@ -1,29 +1,30 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
+
 import qs.modules.bar.components
-import "../../utils"
+import qs.modules.common
 
 PanelWindow {
-    id: bar
+    id: root
 
     anchors.top: true
     anchors.left: true
     anchors.right: true
 
     color: "transparent"
-    implicitHeight: 44
+    implicitHeight: Config.bar.height
 
     Rectangle {
         anchors.fill: parent
-        color: Qt.rgba(Colors.background.r, Colors.background.g, Colors.background.b, 0.8)
+        color: Qt.rgba(Config.colors.background.r, Config.colors.background.g, Config.colors.background.b, 0.8)
         anchors.leftMargin: 6
         anchors.topMargin: 6
         anchors.rightMargin: 6
 
         radius: 10
         border.width: 1
-        border.color: Colors.color14
+        border.color: Config.colors.color14
 
         RowLayout {
 
@@ -34,7 +35,7 @@ PanelWindow {
             anchors.rightMargin: 10
 
             Text {
-                color: Colors.color14
+                color: Config.colors.color14
                 text: ""
             }
 
