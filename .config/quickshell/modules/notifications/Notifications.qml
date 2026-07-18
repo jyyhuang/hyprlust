@@ -1,7 +1,6 @@
 pragma ComponentBehavior: Bound
 import Quickshell
 import Quickshell.Io
-import Quickshell.Wayland
 import Quickshell.Services.Notifications
 import QtQuick
 
@@ -27,7 +26,7 @@ Scope {
                 body: n.body,
                 appName: n.appName,
                 urgency: n.urgency,
-                time: Qt.formatDateTime(new Date(), "HH:mm")
+                time: Qt.formatDateTime(new Date(), "hh:mm AP")
             });
             n.tracked = true;
         }

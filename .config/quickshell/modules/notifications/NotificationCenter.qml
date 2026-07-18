@@ -23,7 +23,7 @@ PanelWindow {
     implicitWidth: 380
     implicitHeight: notificationCenterCol.implicitHeight + 24
     color: "transparent"
-    exclusionMode: ExclusionMode.Ignore
+    exclusionMode: ExclusionMode.Auto
 
     Rectangle {
         anchors.fill: parent
@@ -44,15 +44,16 @@ PanelWindow {
                 Text {
                     Layout.fillWidth: true
                     text: "Notifications"
-                    color: Config.colors.color1
+                    color: Config.colors.color13
                     font.family: Config.font.fontFamily
                     font.pixelSize: Config.font.fontSize + 2
                     font.bold: true
                 }
+
                 Text {
                     text: "Clear All"
                     visible: root.history.count > 0
-                    color: Config.colors.color13
+                    color: Config.colors.color14
                     font.family: Config.font.fontFamily
                     font.pixelSize: Config.font.fontSize - 1
                     MouseArea {
@@ -62,15 +63,22 @@ PanelWindow {
                 }
             }
 
-            Repeater {
+            ListView {
+                clip: true
                 model: root.history
+                spacing: 10
+
+                Layout.fillWidth: true
+                Layout.preferredHeight: contentHeight > 400 ? 400 : contentHeight
+
                 delegate: Rectangle {
                     id: centerCard
                     required property int index
                     required property var modelData
+                    clip: true
 
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 60
+                    width: ListView.view.width
+                    height: cardCol.implicitHeight + 16
                     radius: 8
                     color: Config.colors.background
                     border.width: 2
@@ -88,7 +96,7 @@ PanelWindow {
                             Text {
                                 Layout.fillWidth: true
                                 text: centerCard.modelData.summary
-                                color: Config.colors.foreground
+                                color: Config.colors.color12
                                 font.family: Config.font.fontFamily
                                 font.pixelSize: Config.font.fontSize
                                 font.bold: true
@@ -97,14 +105,14 @@ PanelWindow {
 
                             Text {
                                 text: centerCard.modelData.time
-                                color: Config.colors.color14
+                                color: Config.colors.foreground
                                 font.family: Config.font.fontFamily
                                 font.pixelSize: Config.font.fontSize - 3
                             }
 
                             Text {
                                 text: "x"
-                                color: Config.colors.color14
+                                color: Config.colors.foreground
                                 font.family: Config.font.fontFamily
                                 font.pixelSize: Config.font.fontSize - 1
                                 MouseArea {
@@ -118,7 +126,7 @@ PanelWindow {
                             Layout.fillWidth: true
                             visible: centerCard.modelData.body !== ""
                             text: centerCard.modelData.body
-                            color: Config.colors.foreground
+                            color: Config.colors.color14
                             font.family: Config.font.fontFamily
                             font.pixelSize: Config.font.fontSize - 1
                             wrapMode: Text.WordWrap
@@ -127,12 +135,22 @@ PanelWindow {
                         Text {
                             visible: centerCard.modelData.appName !== ""
                             text: centerCard.modelData.appName
-                            color: Config.colors.color14
+                            color: Config.colors.color8
                             font.family: Config.font.fontFamily
                             font.pixelSize: Config.font.fontSize - 3
                         }
                     }
                 }
+            }
+
+            Text {
+                visible: root.history.count === 0
+                text: "No Notifications"
+                color: Config.colors.color8
+                font.family: Config.font.fontFamily
+                font.pixelSize: Config.font.fontSize - 2
+                Layout.alignment: Qt.AlignHCenter
+                Layout.bottomMargin: 10
             }
         }
     }

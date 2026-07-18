@@ -20,7 +20,7 @@ PanelWindow {
     implicitWidth: 380
     implicitHeight: Math.max(1, column.implicitHeight)
     color: "transparent"
-    exclusionMode: ExclusionMode.Ignore
+    exclusionMode: ExclusionMode.Auto
 
     ColumnLayout {
         id: column
@@ -50,6 +50,7 @@ PanelWindow {
                     anchors.fill: parent
                     anchors.margins: 10
                     spacing: 10
+
                     Image {
                         Layout.preferredWidth: 36
                         Layout.preferredHeight: 36
@@ -58,13 +59,14 @@ PanelWindow {
                         visible: source.toString() !== ""
                         source: card.modelData.image || card.modelData.appIcon || ""
                     }
+
                     ColumnLayout {
                         Layout.fillWidth: true
                         spacing: 2
                         Text {
                             Layout.fillWidth: true
                             text: card.modelData.summary
-                            color: Config.colors.color14
+                            color: Config.colors.color12
                             font.family: Config.font.fontFamily
                             font.pixelSize: Config.font.fontSize
                             font.bold: true
@@ -75,13 +77,14 @@ PanelWindow {
                             Layout.fillWidth: true
                             visible: text !== ""
                             text: card.modelData.body
-                            color: Config.colors.foreground
+                            color: Config.colors.color14
                             font.family: Config.font.fontFamily
                             font.pixelSize: Config.font.fontSize - 1
                             wrapMode: Text.WordWrap
                         }
                     }
                 }
+
                 MouseArea {
                     anchors.fill: parent
                     onClicked: card.modelData.dismiss()
