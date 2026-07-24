@@ -104,15 +104,14 @@ SERVICES=("ufw.service" "reflector.service" "docker.socket" "fstrim.timer" "pacc
 
 if ask_confirmation "Do you want to enable/start services (${SERVICES[*]})?"; then
 
-    sudo ufw default deny incoming
-    sudo ufw default allow outgoing
-    sudo ufw enable
-
     for svc in "${SERVICES[@]}"; do
         echo "Setting up $svc..."
         sudo systemctl enable --now "$svc"
     done
 
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+    sudo ufw enable
 fi
 
 if [[ "$SHELL" != */zsh ]]; then

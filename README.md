@@ -10,7 +10,7 @@
 
 This configuration is for my custom [Hyprland](https://github.com/hyprwm/Hyprland) setup, featuring dynamic color schemes powered by [Wallust](https://codeberg.org/explosion-mental/wallust). The included script automates the installation of packages, installs paru, copies files, and enables services. I haven't fully tested the script so you may need to set things up manually.
 
-Oh, and it's Arch BTW... jk (unless).
+Oh, and it's Arch BTW... jk.
 
 > [!WARNING]
 > These are my personal dot files and may not work for everyone. Packages may not be up to date, use at your own risk.
