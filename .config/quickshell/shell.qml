@@ -8,6 +8,5 @@ ShellRoot {
     id: root
 
     Bar {}
-
     Notifications {}
 }

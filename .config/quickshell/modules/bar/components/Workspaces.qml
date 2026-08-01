@@ -2,8 +2,11 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell.Hyprland
 
+import qs.modules.common
+import qs.modules.bar.components
+
 RowLayout {
-    id: workspace
+    id: root
     spacing: 5
 
     Repeater {
@@ -13,10 +16,12 @@ RowLayout {
         }
     }
 
-    property var extraWorkspace: Hyprland.workspaces.values.find(w => w.focused && w.id > 5)
+    property var extraWorkspaces: Hyprland.workspaces.values.filter(w => (w.focused || w.toplevels != null) && w.id > 5)
 
-    WorkspaceButton {
-        visible: extraWorkspace != null
-        workspaceId: extraWorkspace ? extraWorkspace.id : 0
+    Repeater {
+        model: root.extraWorkspaces
+        delegate: WorkspaceButton {
+            workspaceId: modelData.id
+        }
     }
 }

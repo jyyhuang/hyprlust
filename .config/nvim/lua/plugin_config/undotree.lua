@@ -1,5 +1,0 @@
-return {
-	{
-		"mbbill/undotree",
-	},
-}

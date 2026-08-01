@@ -27,16 +27,15 @@ PanelWindow {
         border.color: Config.colors.color14
 
         RowLayout {
-
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-
             anchors.leftMargin: 10
-            anchors.rightMargin: 10
 
             Text {
-                color: Config.colors.color14
                 text: ""
+                color: Config.colors.color14
+                font.pixelSize: Config.font.fontSize
+                font.family: Config.font.fontFamily
             }
 
             Workspaces {}
@@ -46,7 +45,9 @@ PanelWindow {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             anchors.rightMargin: 10
+            spacing: 10
 
+            Clock {}
             Power {}
         }
     }
