@@ -47,6 +47,10 @@ PanelWindow {
             anchors.rightMargin: 10
             spacing: 10
 
+            IdleButton {
+                window: root
+            }
+
             Clock {}
             Power {}
         }

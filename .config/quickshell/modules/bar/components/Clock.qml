@@ -5,7 +5,7 @@ import qs.modules.common
 
 Item {
     id: root
-    property string timeFormat: "HH:mm AP"
+    property string timeFormat: "hh:mm AP"
     implicitWidth: timeText.implicitWidth
     implicitHeight: timeText.implicitHeight
 

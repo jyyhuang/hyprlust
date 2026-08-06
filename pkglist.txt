@@ -15,8 +15,8 @@ cliphist
 dkms
 docker
 docker-buildx
+docker-compose
 dosfstools
-dunst
 efibootmgr
 fastfetch
 fd
@@ -46,7 +46,6 @@ lazygit
 ldns
 libnotify
 libpulse
-libva-nvidia-driver
 linux
 linux-firmware
 linux-headers
@@ -63,7 +62,7 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 ntp
-nvidia-open-dkms
+nvidia-open
 nvm
 nwg-look
 obs-studio
@@ -93,7 +92,9 @@ sof-firmware
 spotify-launcher
 starship
 sudo
+timeshift
 tk
+tmux
 trash-cli
 tree-sitter-cli
 ttf-fira-sans
