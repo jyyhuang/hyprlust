@@ -4,7 +4,7 @@ import Quickshell.Services.Notifications
 import QtQuick
 import QtQuick.Layouts
 
-import qs.modules.common
+import qs.common
 
 PanelWindow {
     id: root
@@ -111,7 +111,7 @@ PanelWindow {
                             }
 
                             Text {
-                                text: "x"
+                                text: Config.icons.close
                                 color: Config.colors.foreground
                                 font.family: Config.font.fontFamily
                                 font.pixelSize: Config.font.fontSize - 1

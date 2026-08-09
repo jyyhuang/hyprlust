@@ -1,7 +1,7 @@
 import Quickshell.Wayland
 import QtQuick
 
-import qs.modules.common
+import qs.common
 
 Item {
     id: root
@@ -19,9 +19,9 @@ Item {
     Text {
         id: idleText
         anchors.centerIn: parent
-        text: root.isEnabled ? " " : ""
+        text: root.isEnabled ? Config.icons.idleInhibitorEnabled : Config.icons.idleInhibitorDisabled
         color: Config.colors.color14
-        font.pixelSize: Config.font.fontSize
+        font.pixelSize: 14
         font.family: Config.font.fontFamily
         font.bold: true
     }

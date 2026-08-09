@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell.Hyprland
 
-import qs.modules.common
+import qs.common
 import qs.modules.bar.components
 
 RowLayout {
@@ -16,7 +16,7 @@ RowLayout {
         }
     }
 
-    property var extraWorkspaces: Hyprland.workspaces.values.filter(w => (w.focused || w.toplevels != null) && w.id > 5)
+    property var extraWorkspaces: Hyprland.workspaces.values.filter(w => w.id > 5)
 
     Repeater {
         model: root.extraWorkspaces

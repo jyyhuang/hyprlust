@@ -1,7 +1,7 @@
 import QtQuick
 import Quickshell.Hyprland
 
-import qs.modules.common
+import qs.common
 
 Item {
     id: root
@@ -24,6 +24,11 @@ Item {
 
     MouseArea {
         anchors.fill: parent
-        onClicked: root.hyprWorkspace.activate()
+        cursorShape: Qt.OpenHandCursor
+        visible: root.isFocused || root.hasTopLevels
+        onClicked: {
+            root.hyprWorkspace.activate();
+            console.log(root.hyprWorkspace);
+        }
     }
 }

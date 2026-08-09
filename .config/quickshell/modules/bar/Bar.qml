@@ -3,7 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import qs.modules.bar.components
-import qs.modules.common
+import qs.common
 
 PanelWindow {
     id: root
@@ -32,13 +32,17 @@ PanelWindow {
             anchors.leftMargin: 10
 
             Text {
-                text: ""
+                text: Config.icons.arch
                 color: Config.colors.color14
                 font.pixelSize: Config.font.fontSize
                 font.family: Config.font.fontFamily
             }
 
             Workspaces {}
+
+            IdleButton {
+                window: root
+            }
         }
 
         RowLayout {
@@ -47,10 +51,8 @@ PanelWindow {
             anchors.rightMargin: 10
             spacing: 10
 
-            IdleButton {
-                window: root
-            }
-
+            Memory {}
+            Battery {}
             Clock {}
             Power {}
         }

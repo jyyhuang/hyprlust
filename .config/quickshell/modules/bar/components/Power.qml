@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import Quickshell.Io
 import Quickshell
 
-import qs.modules.common
+import qs.common
 
 Item {
     id: root
@@ -15,7 +15,7 @@ Item {
     Text {
         id: powerText
         anchors.centerIn: parent
-        text: "󰐥"
+        text: Config.icons.power
         color: Config.colors.color14
         font.pixelSize: Config.font.fontSize
         font.family: Config.font.fontFamily

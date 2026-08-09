@@ -4,7 +4,7 @@ import Quickshell.Io
 import Quickshell.Services.Notifications
 import QtQuick
 
-import qs.modules.common
+import qs.common
 import qs.modules.notifications
 
 Scope {

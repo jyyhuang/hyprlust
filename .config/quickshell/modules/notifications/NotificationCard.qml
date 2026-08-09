@@ -3,7 +3,7 @@ import Quickshell.Services.Notifications
 import QtQuick
 import QtQuick.Layouts
 
-import qs.modules.common
+import qs.common
 
 PanelWindow {
     id: root

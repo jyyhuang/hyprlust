@@ -1,11 +1,11 @@
 import Quickshell
 import QtQuick
 
-import qs.modules.common
+import qs.common
 
 Item {
     id: root
-    property string timeFormat: "hh:mm AP"
+    property string timeFormat: "ddd, MM/dd · hh:mm AP"
     implicitWidth: timeText.implicitWidth
     implicitHeight: timeText.implicitHeight
 
