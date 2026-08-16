@@ -1,7 +1,7 @@
 -- basics
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff = 999

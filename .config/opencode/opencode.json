@@ -3,7 +3,6 @@
   "autoupdate": true,
   "permission": {
     "edit": "ask",
-    "bash": "ask"
   },
   "agent": {
     "code-reviewer": {

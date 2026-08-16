@@ -15,7 +15,7 @@ Item {
     implicitHeight: memoryText.implicitHeight
 
     Timer {
-        interval: 3000
+        interval: 5000
         running: true
         repeat: true
         onTriggered: {

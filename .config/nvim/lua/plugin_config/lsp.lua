@@ -13,7 +13,7 @@ return {
 					-- LSP
 					"pylsp",
 					"ts_ls",
-					"rust-analyzer",
+					"rust_analyzer",
 					"lua_ls",
 					"clangd",
 
@@ -34,6 +34,16 @@ return {
 			vim.lsp.enable("qmlls")
 			vim.lsp.config("qmlls", {
 				cmd = { "qmlls6" },
+			})
+
+			vim.lsp.config("rust_analyzer", {
+				settings = {
+					["rust-analyzer"] = {
+						check = {
+							command = "clippy",
+						},
+					},
+				},
 			})
 
 			vim.keymap.set("n", "[d", function()
