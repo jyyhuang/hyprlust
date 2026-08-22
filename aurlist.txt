@@ -3,4 +3,3 @@ paru-debug
 python-pywalfox
 vesktop
 wallust
-wezterm-git

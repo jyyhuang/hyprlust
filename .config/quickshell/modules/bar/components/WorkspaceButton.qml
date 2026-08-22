@@ -28,7 +28,6 @@ Item {
         visible: root.isFocused || root.hasTopLevels
         onClicked: {
             root.hyprWorkspace.activate();
-            console.log(root.hyprWorkspace);
         }
     }
 }

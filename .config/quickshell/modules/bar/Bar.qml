@@ -30,6 +30,7 @@ PanelWindow {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             anchors.leftMargin: 10
+            spacing: 10
 
             Text {
                 text: Config.icons.arch
@@ -53,6 +54,7 @@ PanelWindow {
 
             Memory {}
             Battery {}
+            Network {}
             Clock {}
             Power {}
         }

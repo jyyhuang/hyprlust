@@ -55,6 +55,7 @@ function module.apply_to_config(config)
 			harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 			weight = "Regular",
 		},
+        "JetBrains Mono"
 	})
 
 	config.colors = {

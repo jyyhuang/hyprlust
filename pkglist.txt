@@ -103,6 +103,7 @@ unzip
 uv
 uwsm
 waybar
+wezterm
 wireplumber
 wl-clipboard
 wpa_supplicant

@@ -10,6 +10,7 @@ Singleton {
     property QtObject font
     property QtObject notifications
     property QtObject icons
+    property QtObject wifi
 
     colors: QtObject {
         property color background: "{{background}}"
@@ -65,5 +66,14 @@ Singleton {
         readonly property string battery10: "󰁺"
         readonly property string battery0: "󰂎"
         readonly property string memory: " "
+    }
+
+    wifi: QtObject {
+        readonly property string wifiOff: "󰤮"
+        readonly property string wifi100: "󰤨"
+        readonly property string wifi75: "󰤥"
+        readonly property string wifi50: "󰤢"
+        readonly property string wifi25: "󰤟"
+        readonly property string wifi0: "󰤯"
     }
 }
