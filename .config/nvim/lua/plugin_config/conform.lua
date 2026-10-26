@@ -7,7 +7,7 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					python = { "black" },
+					python = { "ruff" },
 					cpp = { "clang-format" },
 					c = { "clang-format" },
 					rust = { "rustfmt" },

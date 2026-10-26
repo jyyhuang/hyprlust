@@ -10,6 +10,7 @@ PanelWindow {
     id: root
     required property var notificationCenterOpen
     required property var history
+    property int maxCardHeight: 180
 
     visible: notificationCenterOpen
     anchors {
@@ -78,66 +79,74 @@ PanelWindow {
                     clip: true
 
                     width: ListView.view.width
-                    height: cardCol.implicitHeight + 16
+                    height: Math.min(cardCol.implicitHeight + 16, root.maxCardHeight)
                     radius: 8
                     color: Config.colors.background
                     border.width: 2
                     border.color: modelData.urgency === NotificationUrgency.Critical ? Config.colors.color13 : Config.colors.color14
 
-                    ColumnLayout {
-                        id: cardCol
+                    Flickable {
                         anchors.fill: parent
                         anchors.margins: 8
-                        spacing: 2
+                        contentWidth: width
+                        contentHeight: cardCol.implicitHeight
+                        clip: true
+                        boundsBehavior: Flickable.StopAtBounds
 
-                        RowLayout {
-                            Layout.fillWidth: true
-                            spacing: 6
-                            Text {
+                        ColumnLayout {
+                            id: cardCol
+                            width: parent.width
+                            spacing: 2
+
+                            RowLayout {
                                 Layout.fillWidth: true
-                                text: centerCard.modelData.summary
-                                color: Config.colors.color12
-                                font.family: Config.font.fontFamily
-                                font.pixelSize: Config.font.fontSize
-                                font.bold: true
-                                elide: Text.ElideRight
+                                spacing: 6
+                                Text {
+                                    Layout.fillWidth: true
+                                    text: centerCard.modelData.summary
+                                    color: Config.colors.color12
+                                    font.family: Config.font.fontFamily
+                                    font.pixelSize: Config.font.fontSize
+                                    font.bold: true
+                                    wrapMode: Text.WordWrap
+                                }
+
+                                Text {
+                                    text: centerCard.modelData.time
+                                    color: Config.colors.foreground
+                                    font.family: Config.font.fontFamily
+                                    font.pixelSize: Config.font.fontSize - 3
+                                }
+
+                                Text {
+                                    text: Config.icons.close
+                                    color: Config.colors.foreground
+                                    font.family: Config.font.fontFamily
+                                    font.pixelSize: Config.font.fontSize - 1
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        onClicked: root.history.remove(centerCard.index)
+                                    }
+                                }
                             }
 
                             Text {
-                                text: centerCard.modelData.time
-                                color: Config.colors.foreground
+                                Layout.fillWidth: true
+                                visible: centerCard.modelData.body !== ""
+                                text: centerCard.modelData.body
+                                color: Config.colors.color14
+                                font.family: Config.font.fontFamily
+                                font.pixelSize: Config.font.fontSize - 1
+                                wrapMode: Text.WordWrap
+                            }
+
+                            Text {
+                                visible: centerCard.modelData.appName !== ""
+                                text: centerCard.modelData.appName
+                                color: Config.colors.color8
                                 font.family: Config.font.fontFamily
                                 font.pixelSize: Config.font.fontSize - 3
                             }
-
-                            Text {
-                                text: Config.icons.close
-                                color: Config.colors.foreground
-                                font.family: Config.font.fontFamily
-                                font.pixelSize: Config.font.fontSize - 1
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: root.history.remove(centerCard.index)
-                                }
-                            }
-                        }
-
-                        Text {
-                            Layout.fillWidth: true
-                            visible: centerCard.modelData.body !== ""
-                            text: centerCard.modelData.body
-                            color: Config.colors.color14
-                            font.family: Config.font.fontFamily
-                            font.pixelSize: Config.font.fontSize - 1
-                            wrapMode: Text.WordWrap
-                        }
-
-                        Text {
-                            visible: centerCard.modelData.appName !== ""
-                            text: centerCard.modelData.appName
-                            color: Config.colors.color8
-                            font.family: Config.font.fontFamily
-                            font.pixelSize: Config.font.fontSize - 3
                         }
                     }
                 }

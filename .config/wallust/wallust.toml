@@ -80,7 +80,7 @@ waybar = { src = 'colors-waybar.css', dst = '~/.config/waybar/colors.css'}
 wezterm = { src = 'colors.json', dst = '~/.config/wezterm/colors.json'}
 rofi = {src = 'colors-rofi.rasi', dst = '~/.config/rofi/themes/colors-rofi.rasi'}
 rofi-power = {src = 'colors-power.rasi', dst = '~/.config/rofi/themes/powermenu/colors-power.rasi'}
-vesktop = {src = 'colors-discord.css', dst = '~/.config/vesktop/themes/ClearVision_wallust.css'}
+#vesktop = {src = 'colors-discord.css', dst = '~/.config/vesktop/themes/ClearVision_wallust.css'}
 firefox = {src= 'colors.json', dst = '~/.cache/wal/colors.json'}
 gtk3 = {src='colors-gtk.css', dst='~/.config/gtk-3.0/gtk.css'}
 gtk4 = {src='colors-gtk.css', dst='~/.config/gtk-4.0/gtk.css'}

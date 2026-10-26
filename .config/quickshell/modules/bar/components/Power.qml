@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Layouts
 import Quickshell.Io
 import Quickshell
 
@@ -15,7 +14,7 @@ Item {
     Text {
         id: powerText
         anchors.centerIn: parent
-        text: Config.icons.power
+        text: Config.icons.arch
         color: Config.colors.color14
         font.pixelSize: Config.font.fontSize
         font.family: Config.font.fontFamily

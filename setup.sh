@@ -100,7 +100,7 @@ if ask_confirmation "Do you want to sync config files and wallpapers?"; then
 fi
 
 # Enable and start services
-SERVICES=("ufw.service" "reflector.service" "docker.socket" "fstrim.timer" "paccache.timer" "systemd-timesyncd")
+SERVICES=("ufw.service" "reflector.service" "docker.socket" "fstrim.timer" "paccache.timer" "systemd-timesyncd" "bluetooth.service")
 
 if ask_confirmation "Do you want to enable/start services (${SERVICES[*]})?"; then
 

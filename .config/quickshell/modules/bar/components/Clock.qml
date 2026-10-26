@@ -5,7 +5,7 @@ import qs.common
 
 Item {
     id: root
-    property string timeFormat: "ddd, MM/dd · hh:mm AP"
+    property string timeFormat: "dddd, MM/dd • hh:mm AP"
     implicitWidth: timeText.implicitWidth
     implicitHeight: timeText.implicitHeight
 

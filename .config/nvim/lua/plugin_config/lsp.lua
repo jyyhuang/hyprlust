@@ -18,7 +18,7 @@ return {
 					"clangd",
 
 					-- Others
-					"black",
+					"ruff",
 					"prettier",
 					"stylua",
 					"clang-format",

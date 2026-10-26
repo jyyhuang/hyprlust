@@ -5,12 +5,16 @@ return {
 	dependencies = {
 		{ "nvim-lua/plenary.nvim", lazy = true },
 	},
-	opts = {
-		-- if you want to open yazi instead of netrw, see below for more info
-		open_for_directories = true,
-		floating_window_scaling_factor = 1,
+	keys = {
+		{
+			"-",
+			mode = { "n" },
+			"<cmd>Yazi<cr>",
+			desc = "Open yazi at the current file",
+		},
 	},
-	config = function()
-		vim.keymap.set("n", "-", "<cmd>Yazi<cr>", { desc = "Open yazi" })
-	end,
+	opts = {
+		floating_window_scaling_factor = 1,
+		yazi_floating_window_border = "none",
+	},
 }

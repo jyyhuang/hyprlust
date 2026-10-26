@@ -12,6 +12,7 @@ btop
 bun
 cava
 cliphist
+discord
 dkms
 docker
 docker-buildx
@@ -111,6 +112,7 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs
 xdg-utils
 yazi
+zip
 zoxide
 zram-generator
 zsh

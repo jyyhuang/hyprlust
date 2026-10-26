@@ -11,6 +11,7 @@ Singleton {
     property QtObject notifications
     property QtObject icons
     property QtObject wifi
+    property QtObject volume
 
     colors: QtObject {
         property color background: "{{background}}"
@@ -66,6 +67,7 @@ Singleton {
         readonly property string battery10: "󰁺"
         readonly property string battery0: "󰂎"
         readonly property string memory: " "
+        readonly property string notification: ""
     }
 
     wifi: QtObject {
@@ -75,5 +77,12 @@ Singleton {
         readonly property string wifi50: "󰤢"
         readonly property string wifi25: "󰤟"
         readonly property string wifi0: "󰤯"
+    }
+
+    volume: QtObject {
+        readonly property string muted: "󰝟"
+        readonly property string low: "󰕿"
+        readonly property string medium: "󰖀"
+        readonly property string high: "󰕾"
     }
 }

@@ -29,21 +29,23 @@ PanelWindow {
         RowLayout {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: 10
+            anchors.leftMargin: 15
             spacing: 10
 
-            Text {
-                text: Config.icons.arch
-                color: Config.colors.color14
-                font.pixelSize: Config.font.fontSize
-                font.family: Config.font.fontFamily
-            }
-
+            Power {}
             Workspaces {}
-
             IdleButton {
                 window: root
             }
+        }
+
+        RowLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            spacing: 10
+
+            Audio {}
+            Media {}
         }
 
         RowLayout {
@@ -52,11 +54,9 @@ PanelWindow {
             anchors.rightMargin: 10
             spacing: 10
 
-            Memory {}
             Battery {}
-            Network {}
-            Clock {}
-            Power {}
+            Memory {}
+            Utility {}
         }
     }
 }

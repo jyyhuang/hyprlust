@@ -1,8 +1,8 @@
 import QtQuick
 import Quickshell.Io
-import Quickshell.Networking
 
 import qs.common
+import qs.services
 
 Item {
     id: root
@@ -10,23 +10,16 @@ Item {
     implicitWidth: networkText.implicitWidth
     implicitHeight: networkText.implicitHeight
 
-    readonly property bool wifiEnabled: Networking.wifiEnabled
-    readonly property var devices: Networking.devices ? Networking.devices.values : []
-    readonly property var wifiDevice: devices.find(d => d.type === DeviceType.Wifi) || null
-    readonly property var wifiNetworks: wifiDevice ? wifiDevice.networks.values : []
-    readonly property var wifiActive: wifiNetworks.find(n => n.connected) || null
-    readonly property real wifiSignalStrength: wifiActive ? Math.round(wifiActive.signalStrength * 100) : 0
-
     readonly property string wifiIcon: {
-        if (!wifiEnabled || !devices || !wifiDevice || !wifiNetworks || !wifiActive) {
+        if (!WifiService.wifiEnabled || !WifiService.devices || !WifiService.wifiDevice || !WifiService.wifiNetworks || !WifiService.wifiActive) {
             return Config.wifi.wifiOff;
-        } else if (wifiSignalStrength >= 76) {
+        } else if (WifiService.wifiSignalStrength >= 76) {
             return Config.wifi.wifi100;
-        } else if (wifiSignalStrength >= 51) {
+        } else if (WifiService.wifiSignalStrength >= 51) {
             return Config.wifi.wifi75;
-        } else if (wifiSignalStrength >= 26) {
+        } else if (WifiService.wifiSignalStrength >= 26) {
             return Config.wifi.wifi50;
-        } else if (wifiSignalStrength >= 1) {
+        } else if (WifiService.wifiSignalStrength >= 1) {
             return Config.wifi.wifi25;
         } else {
             return Config.wifi.wifi0;

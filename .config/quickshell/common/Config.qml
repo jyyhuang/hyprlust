@@ -11,6 +11,9 @@ Singleton {
     property QtObject notifications
     property QtObject icons
     property QtObject wifi
+    property QtObject volume
+    property QtObject microphone
+    property QtObject bluetooth
 
     colors: QtObject {
         property color background: "#04070D"
@@ -66,6 +69,7 @@ Singleton {
         readonly property string battery10: "󰁺"
         readonly property string battery0: "󰂎"
         readonly property string memory: " "
+        readonly property string notification: ""
     }
 
     wifi: QtObject {
@@ -75,5 +79,23 @@ Singleton {
         readonly property string wifi50: "󰤢"
         readonly property string wifi25: "󰤟"
         readonly property string wifi0: "󰤯"
+    }
+
+    volume: QtObject {
+        readonly property string muted: "󰝟"
+        readonly property string low: "󰕿"
+        readonly property string medium: "󰖀"
+        readonly property string high: "󰕾"
+    }
+
+    microphone: QtObject {
+        readonly property string active: "󰍬"
+        readonly property string muted: "󰍭"
+    }
+
+    bluetooth: QtObject {
+        readonly property string off: "󰂲"
+        readonly property string on: "󰂯"
+        readonly property string connected: "󰂱"
     }
 }

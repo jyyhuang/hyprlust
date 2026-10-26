@@ -23,7 +23,7 @@ hl.window_rule({
 })
 
 hl.window_rule({ name = "firefox-workspace-2", match = { class = "firefox" }, workspace = "2" })
-hl.window_rule({ name = "vesktop-workspace-3", match = { class = "vesktop" }, workspace = "3" })
+hl.window_rule({ name = "discord-workspace-3", match = { class = "discord" }, workspace = "3" })
 hl.window_rule({ name = "fullscreen-border-color", match = { fullscreen = true }, border_color = colors.color14 })
 hl.window_rule({ name = "nemo-opacity", match = { class = "nemo" }, opacity = "0.9" })
 hl.window_rule({ match = { class = "wezterm" }, no_blur = true })
